@@ -1,1 +1,27 @@
 @import "tailwindcss";
+@import "./fonts.css";
+
+@theme {
+  --font-regular: "ReplicaRegular", sans-serif;
+  --font-bold: "ReplicaBold", sans-serif;
+  --font-bold-italic: "ReplicaBoldItalic", sans-serif;
+  --font-light: "ReplicaLight", sans-serif;
+  --font-mono: "ReplicaMono", monospace;
+
+  --color-festa-50: #fff1f1;
+  --color-festa-100: #ffdfdf;
+  --color-festa-200: #ffc5c6;
+  --color-festa-300: #ff9d9e;
+  --color-festa-400: #ff6466;
+  --color-festa-500: #ff4547;
+  --color-festa-600: #ed1517;
+  --color-festa-700: #c80d0f;
+  --color-festa-800: #a50f11;
+  --color-festa-900: #881415;
+  --color-festa-950: #4b0405;
+}
+
+/* :root,
+body {
+  font-family: "ReplicaRegular", sans-serif;
+} */

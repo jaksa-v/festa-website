@@ -1,0 +1,36 @@
+/* Replica Font Faces */
+@font-face {
+  font-family: "ReplicaRegular";
+  src: url("/fonts/ReplicaRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ReplicaBold";
+  src: url("/fonts/ReplicaBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ReplicaBoldItalic";
+  src: url("/fonts/ReplicaBoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ReplicaLight";
+  src: url("/fonts/ReplicaLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ReplicaMono";
+  src: url("/fonts/ReplicaMono.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
