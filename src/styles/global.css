@@ -21,7 +21,11 @@
   --color-festa-950: #4b0405;
 }
 
-/* :root,
+:root,
 body {
   font-family: "ReplicaRegular", sans-serif;
-} */
+}
+
+html {
+  scroll-behavior: smooth;
+}

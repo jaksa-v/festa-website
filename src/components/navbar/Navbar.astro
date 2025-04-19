@@ -1,0 +1,34 @@
+---
+import NavbarDesktop from "./NavbarDesktop.astro";
+import NavbarMobile from "./NavbarMobile.vue";
+import OtherNavbarMobile from "./OtherNavbarMobile.astro";
+import OtherNavbarDesktop from "./OtherNavbarDesktop.astro";
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="fixed top-0 z-50 w-full bg-black shadow-md">
+  {
+    currentPath === "/" ? (
+      <>
+        <div class="hidden md:block">
+          <NavbarDesktop client:load />
+        </div>
+
+        <div class="block md:hidden">
+          <NavbarMobile client:load />
+        </div>
+      </>
+    ) : (
+      <>
+        <div class="hidden md:block">
+          <OtherNavbarDesktop />
+        </div>
+
+        <div class="block md:hidden">
+          <OtherNavbarMobile />
+        </div>
+      </>
+    )
+  }
+</nav>
