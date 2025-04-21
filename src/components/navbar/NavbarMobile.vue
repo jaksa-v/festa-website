@@ -1,7 +1,9 @@
 <script setup>
 import { ref } from "vue";
+import ContactModal from "../modal/ContactModal.vue";
 
 const isMenuOpen = ref(false);
+const isContactModalOpen = ref(false);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -9,6 +11,11 @@ const toggleMenu = () => {
 
 const scrollToTop = () => {
   window.scrollTo(0, 0);
+};
+
+const handleContactClick = () => {
+  isContactModalOpen.value = true;
+  isMenuOpen.value = false;
 };
 </script>
 
@@ -60,7 +67,13 @@ const scrollToTop = () => {
         <a href="/gallery" class="py-2 text-white hover:text-gray-300">
           Gallery
         </a>
-        <a href="/" class="py-2 text-white hover:text-gray-300"> Contact </a>
+        <button
+          @click="handleContactClick"
+          class="py-2 text-white hover:text-gray-300"
+        >
+          Contact
+        </button>
+        <ContactModal v-model:isOpen="isContactModalOpen" />
       </nav>
     </div>
   </div>

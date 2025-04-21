@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/navbar/Navbar.astro";
+import ContactButton from "../components/modal/ContactButton.vue";
 ---
 
 <!doctype html>
@@ -14,7 +15,12 @@ import Navbar from "../components/navbar/Navbar.astro";
   </head>
   <body>
     <Navbar />
-    <slot />
+    <div
+      class="min-h-screen bg-[url('/src/assets/mobile-bg.png')] bg-cover bg-center bg-no-repeat md:bg-black"
+    >
+      <slot />
+    </div>
+    <ContactButton client:only="vue" />
   </body>
 </html>
 

@@ -7,16 +7,16 @@ import OtherNavbarDesktop from "./OtherNavbarDesktop.astro";
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="fixed top-0 z-50 w-full bg-black shadow-md">
+<nav class="fixed top-0 w-full bg-black shadow-md">
   {
     currentPath === "/" ? (
       <>
         <div class="hidden md:block">
-          <NavbarDesktop client:load />
+          <NavbarDesktop />
         </div>
 
         <div class="block md:hidden">
-          <NavbarMobile client:load />
+          <NavbarMobile client:only="vue" />
         </div>
       </>
     ) : (
