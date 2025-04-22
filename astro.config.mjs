@@ -4,6 +4,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 import vue from "@astrojs/vue";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -11,4 +13,5 @@ export default defineConfig({
   },
 
   integrations: [vue()],
+  adapter: netlify(),
 });
