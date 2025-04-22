@@ -22,29 +22,29 @@ const handleContactClick = () => {
 <template>
   <!-- Top Navbar -->
   <div
-    class="fixed top-0 left-0 z-50 w-full transition-opacity duration-0 ease-in-out"
     :style="{
       height: isMenuOpen ? '340px' : '80px',
       background: `url(${isMenuOpen ? '/src/assets/nav-top-bg-expanded.svg' : '/src/assets/nav-top-bg.svg'}) center/cover no-repeat`,
       opacity: isMenuOpen ? '1' : '0.95',
     }"
+    class="fixed top-0 left-0 z-50 w-full transition-opacity duration-0 ease-in-out"
   >
     <div class="relative flex justify-center px-4 py-3">
       <a
+        class="absolute left-4 text-white"
         href="https://www.instagram.com/festa_official_/"
         target="_blank"
-        class="absolute left-4 text-white"
       >
         Instagram
       </a>
-      <button @click="toggleMenu" class="text-white focus:outline-none">
+      <button class="text-white focus:outline-none" @click="toggleMenu">
         <span v-if="!isMenuOpen" class="text-white">Menu</span>
         <span v-else class="text-festa-500">Close</span>
       </button>
       <a
+        class="absolute right-4 text-white"
         href="https://www.instagram.com/festa_official_/"
         target="_blank"
-        class="absolute right-4 text-white"
       >
         Tickets
       </a>
@@ -52,24 +52,24 @@ const handleContactClick = () => {
 
     <!-- Menu Items -->
     <div
-      class="absolute top-8 left-0 w-full py-4 transition-all duration-0 ease-in-out"
       :class="{
         'invisible -translate-y-2 opacity-0': !isMenuOpen,
         'visible translate-y-0 opacity-100': isMenuOpen,
       }"
+      class="absolute top-8 left-0 w-full py-4 transition-all duration-0 ease-in-out"
     >
       <nav class="flex flex-col items-center">
-        <a href="/" class="py-2 text-white hover:text-gray-300"> About Us </a>
-        <a href="/our-work" class="py-2 text-white hover:text-gray-300">
+        <a class="py-2 text-white hover:text-gray-300" href="/"> About Us </a>
+        <a class="py-2 text-white hover:text-gray-300" href="/our-work">
           Our Work
         </a>
-        <a href="/" class="py-2 text-white hover:text-gray-300"> Services </a>
-        <a href="/gallery" class="py-2 text-white hover:text-gray-300">
+        <a class="py-2 text-white hover:text-gray-300" href="/"> Services </a>
+        <a class="py-2 text-white hover:text-gray-300" href="/gallery">
           Gallery
         </a>
         <button
-          @click="handleContactClick"
           class="py-2 text-white hover:text-gray-300"
+          @click="handleContactClick"
         >
           Contact
         </button>
@@ -87,17 +87,17 @@ const handleContactClick = () => {
     "
   >
     <img
-      src="/src/assets/notch.svg"
       alt="Notch"
       class="absolute top-5 left-1/2 h-24 w-24 -translate-x-1/2"
+      src="/src/assets/notch.svg"
     />
     <div class="flex w-full items-center justify-center">
       <div class="z-50 flex w-48 flex-shrink-0 items-center justify-center">
-        <button @click="scrollToTop" class="focus:outline-none">
+        <button class="focus:outline-none" @click="scrollToTop">
           <img
-            src="/src/assets/festa-logo-text.svg"
             alt="Festa Logo"
             class="cursor-pointer object-contain"
+            src="/src/assets/festa-logo-text.svg"
           />
         </button>
       </div>
