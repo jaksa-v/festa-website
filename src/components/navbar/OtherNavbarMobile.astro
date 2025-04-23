@@ -14,12 +14,12 @@ const currentPath = Astro.url.pathname;
     BACK
   </a>
   {
-    currentPath === "/our-work" && (
+    currentPath.includes("/our-work") && (
       <span class="font-mono text-xl text-white">/OUR WORK</span>
     )
   }
   {
-    currentPath === "/gallery" && (
+    currentPath.includes("/gallery") && (
       <span class="font-mono text-xl text-white">/GALLERY</span>
     )
   }
