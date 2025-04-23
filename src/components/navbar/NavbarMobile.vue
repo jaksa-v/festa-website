@@ -22,12 +22,14 @@ const handleContactClick = () => {
 <template>
   <!-- Top Navbar -->
   <div
+    :class="[
+      isMenuOpen ? 'nav-top-mobile-bg-expanded' : 'nav-top-mobile-bg',
+      'fixed top-0 left-0 z-50 w-full transition-opacity duration-0 ease-in-out'
+    ]"
     :style="{
       height: isMenuOpen ? '340px' : '80px',
-      background: `url(${isMenuOpen ? '/src/assets/nav-top-bg-expanded.svg' : '/src/assets/nav-top-bg.svg'}) center/cover no-repeat`,
       opacity: isMenuOpen ? '1' : '0.95',
     }"
-    class="fixed top-0 left-0 z-50 w-full transition-opacity duration-0 ease-in-out"
   >
     <div class="relative flex justify-center px-4 py-3">
       <a
@@ -80,11 +82,7 @@ const handleContactClick = () => {
 
   <!-- Bottom Navbar -->
   <div
-    class="fixed bottom-0 left-0 z-50 flex h-32 w-full flex-col-reverse items-center pb-4"
-    style="
-      background: url(&quot;/src/assets/nav-bottom-bg.svg&quot;) center/cover
-        no-repeat;
-    "
+    class="nav-bottom-mobile-bg fixed bottom-0 left-0 z-50 flex h-32 w-full flex-col-reverse items-center pb-4"
   >
     <img
       alt="Notch"
