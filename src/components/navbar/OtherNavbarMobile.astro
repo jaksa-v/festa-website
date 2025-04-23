@@ -1,4 +1,5 @@
 ---
+import arrowLeft from "../../assets/arrow-left.svg";
 const currentPath = Astro.url.pathname;
 ---
 
@@ -9,7 +10,7 @@ const currentPath = Astro.url.pathname;
     href="/"
     class="text-festa-500 flex items-center gap-x-2 font-mono text-xl"
   >
-    <img src="/src/assets/arrow-left.svg" alt="Arrow Left" />
+    <img src={arrowLeft.src} alt="Arrow Left" />
     BACK
   </a>
   {
