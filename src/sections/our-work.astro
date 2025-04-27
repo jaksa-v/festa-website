@@ -2,7 +2,20 @@
 import { getCollection } from "astro:content";
 import arrowLeft from "../assets/arrow-right.svg";
 
+const imageModules = import.meta.glob("../assets/our-work/*", { eager: true });
+
 const work = await getCollection("work");
+const workWithImages = work.map((item) => {
+  const imagePath = `../assets/our-work/${item.data.image}`;
+  const imageModule = imageModules[imagePath];
+  return {
+    ...item,
+    // @ts-ignore - TypeScript doesn't understand the structure of import.meta.glob() at compile time
+    imageUrl: imageModule?.default || null,
+  };
+});
+
+const defaultColor = "#ff5e5e";
 ---
 
 <div
@@ -13,17 +26,21 @@ const work = await getCollection("work");
   </h2>
   <div class="w-full">
     {
-      work.map((item) => (
+      workWithImages.map((item) => (
         <div
           class="relative flex h-[360px] w-full flex-col gap-y-3 bg-cover bg-center p-4"
-          style={`background-image: url('/src/assets/our-work/${item.data.image}');`}
+          style={
+            item.imageUrl
+              ? `background-image: url('${item.imageUrl.src}');`
+              : ""
+          }
         >
           <h3 class="text-[38px] leading-[34px] font-light text-white">
             {item.data.title}
           </h3>
           <div class="flex max-w-[250px] flex-wrap gap-1">
             {item.data.tags.map((tag) => (
-              <div class="flex items-center justify-center border border-white px-2 py-1.5">
+              <div class="tag-container flex cursor-pointer items-center justify-center border border-white px-2 py-1.5 transition-all duration-300 hover:bg-white/20">
                 <span class="text-[10px] font-light tracking-wide text-white uppercase">
                   {tag}
                 </span>
@@ -32,42 +49,57 @@ const work = await getCollection("work");
           </div>
           <div class="absolute right-4 bottom-3.5 left-4 flex justify-between">
             {item.data.links.includes("gallery") && (
-              <div class="flex gap-x-2">
+              <div class="link-container group flex gap-x-2">
                 <a
                   href="/"
-                  class="font-mono text-lg leading-[18px] text-white uppercase"
+                  class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                  style={`--project-color: ${item.data.color || defaultColor}`}
                 >
                   See
                   <br />
                   Gallery
                 </a>
-                <img class="h-8 w-8" src={arrowLeft.src} alt="Arrow Left" />
+                <img
+                  class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                  src={arrowLeft.src}
+                  alt="Arrow Left"
+                />
               </div>
             )}
             {item.data.links.includes("aftermovie") && (
-              <div class="flex gap-x-2">
+              <div class="link-container group flex gap-x-2">
                 <a
                   href="/"
-                  class="font-mono text-lg leading-[18px] text-white uppercase"
+                  class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                  style={`--project-color: ${item.data.color || defaultColor}`}
                 >
                   The
                   <br />
                   Aftermovie
                 </a>
-                <img class="h-8 w-8" src={arrowLeft.src} alt="Arrow Left" />
+                <img
+                  class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                  src={arrowLeft.src}
+                  alt="Arrow Left"
+                />
               </div>
             )}
             {item.data.links.includes("dj") && (
-              <div class="flex gap-x-2">
+              <div class="link-container group flex gap-x-2">
                 <a
                   href="/"
-                  class="font-mono text-lg leading-[18px] text-white uppercase"
+                  class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                  style={`--project-color: ${item.data.color || defaultColor}`}
                 >
                   Full
                   <br />
                   Dj Set
                 </a>
-                <img class="h-8 w-8" src={arrowLeft.src} alt="Arrow Left" />
+                <img
+                  class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                  src={arrowLeft.src}
+                  alt="Arrow Left"
+                />
               </div>
             )}
           </div>
@@ -76,3 +108,14 @@ const work = await getCollection("work");
     }
   </div>
 </div>
+
+<style>
+  .tag-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+  }
+
+  .link-container:hover img {
+    filter: brightness(1.2);
+  }
+</style>

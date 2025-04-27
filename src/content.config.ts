@@ -10,6 +10,7 @@ const work = defineCollection({
     image: z.string(),
     tags: z.array(z.string()),
     links: z.array(z.string()),
+    color: z.string(),
   }),
 });
 

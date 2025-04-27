@@ -18,7 +18,8 @@
     "links": [
       "gallery",
       "aftermovie"
-    ]
+    ],
+    "color": "#ff5e5e"
   },
   {
     "id": 2,
@@ -38,7 +39,8 @@
     "image": "get-lost-montenegro.png",
     "links": [
       "gallery"
-    ]
+    ],
+    "color": "#4da6ff"
   },
   {
     "id": 3,
@@ -57,7 +59,8 @@
     "links": [
       "gallery",
       "dj"
-    ]
+    ],
+    "color": "#ffac33"
   },
   {
     "id": 4,
@@ -78,6 +81,7 @@
     "links": [
       "gallery",
       "aftermovie"
-    ]
+    ],
+    "color": "#66e0b3"
   }
 ]
