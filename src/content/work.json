@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "title": "Rubix Festival",
+    "tags": [
+      "Event Planning",
+      "Creative Concept",
+      "Artist Booking",
+      "Production",
+      "Design",
+      "Marketing",
+      "Video Production",
+      "F&B",
+      "Art Curation",
+      "Logistics"
+    ],
+    "image": "rubix-festival-2024.png",
+    "links": [
+      "gallery",
+      "aftermovie"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Get Lost Montenegro",
+    "tags": [
+      "Event Planning",
+      "Creative Concept",
+      "Artist Booking",
+      "Production",
+      "Design",
+      "Marketing",
+      "Video Production",
+      "F&B",
+      "Art Curation",
+      "Logistics"
+    ],
+    "image": "get-lost-montenegro.png",
+    "links": [
+      "gallery"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Valentin Huedo at Historic Hotel Podgorica",
+    "tags": [
+      "Event Planning",
+      "Creative Concept",
+      "Artist Booking",
+      "Production",
+      "Design",
+      "Marketing",
+      "Video Production",
+      "Logistics"
+    ],
+    "image": "valentin-huedo.png",
+    "links": [
+      "gallery",
+      "dj"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Mihai Popoviciu at Kampana Tower for Fešta",
+    "tags": [
+      "Event Planning",
+      "Creative Concept",
+      "Artist Booking",
+      "Production",
+      "Design",
+      "Marketing",
+      "Video Production",
+      "F&B",
+      "Art Curation",
+      "Logistics"
+    ],
+    "image": "mihai-popoviciu.png",
+    "links": [
+      "gallery",
+      "aftermovie"
+    ]
+  }
+]
