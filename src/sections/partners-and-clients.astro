@@ -1,0 +1,67 @@
+---
+import sponsors from "../assets/sponsors.png";
+import M from "../components/sponsors/m.astro";
+import Crosstown from "../components/sponsors/crosstown.astro";
+import Ckb from "../components/sponsors/ckb.astro";
+import Skymusic from "../components/sponsors/skymusic.astro";
+import Chameleon from "../components/sponsors/chameleon.astro";
+import Setap from "../components/sponsors/setap.astro";
+import Kodio from "../components/sponsors/kodio.astro";
+import Mkm from "../components/sponsors/mkm.astro";
+import GlavniGrad from "../components/sponsors/glavni-grad.astro";
+import Iqos from "../components/sponsors/iqos.astro";
+import Peroni from "../components/sponsors/peroni.astro";
+import Beefeater from "../components/sponsors/beefeater.astro";
+
+import { Image } from "astro:assets";
+---
+
+<div
+  class="flex min-h-screen flex-col items-center justify-center gap-y-7 bg-black"
+>
+  <h2 class="letter-spacing-[10%] bg-white px-1 text-center font-mono text-3xl">
+    PARTNERS &<br />CLIENTS
+  </h2>
+  <div
+    class="flex max-w-[290px] flex-col gap-y-5 text-center text-xl leading-5 font-light text-white"
+  >
+    <p>
+      Over the years we have collaborated with global brands, cultural
+      institutions, tourism boards, and creative organizations.<span
+        class="font-bold"
+      >
+        Our success is built on strong partnerships and satisfied clients.
+      </span>
+    </p>
+    <p>Together, we turn ideas into reality!</p>
+  </div>
+  <div class="mt-5 flex w-[290px] flex-col gap-y-10">
+    <div class="flex justify-around">
+      <M />
+      <Crosstown />
+    </div>
+    <div class="flex justify-center">
+      <Ckb />
+    </div>
+    <div class="flex justify-center">
+      <Skymusic />
+    </div>
+    <div class="flex justify-evenly">
+      <Chameleon />
+      <Setap />
+    </div>
+    <div class="flex justify-evenly">
+      <Kodio />
+      <Mkm />
+      <GlavniGrad />
+    </div>
+    <div class="flex justify-evenly">
+      <Iqos />
+      <Peroni />
+      <Beefeater />
+    </div>
+  </div>
+  <div>
+    <Image src={sponsors} alt="Image" />
+  </div>
+</div>
