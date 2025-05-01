@@ -18,11 +18,10 @@ import eventProduction2 from "../assets/services/event-production2.png";
 import eventProduction3 from "../assets/services/event-production3.png";
 import eventProduction4 from "../assets/services/event-production4.png";
 import artCuration from "../assets/services/art-curation.png";
+import horizontalLogo from "../assets/festa-logo-horizontal.png";
 ---
 
-<div
-  class="flex min-h-screen flex-col items-center justify-center gap-y-7 bg-black"
->
+<div class="flex flex-col items-center justify-center gap-y-7 bg-black pt-10">
   <h2 class="letter-spacing-[10%] bg-white px-1 font-mono text-3xl">
     SERVICES
   </h2>
@@ -65,6 +64,10 @@ import artCuration from "../assets/services/art-curation.png";
   </div>
   <p class="text-center text-lg text-white">AND MANY MORE...</p>
 
+  <div class="flex items-center justify-center">
+    <Image class="h-10 w-[229px]" src={horizontalLogo} alt="horizontal logo" />
+  </div>
+
   <!--  Design & Marketing -->
   <Header>Design & Marketing</Header>
   <p class="px-8 text-center text-xl leading-5 font-light text-white">
@@ -79,6 +82,10 @@ import artCuration from "../assets/services/art-curation.png";
     <Image src={designAndMarketing2} alt="design and marketing 2" />
     <Image src={designAndMarketing3} alt="design and marketing 3" />
     <Image src={designAndMarketing4} alt="design and marketing 4" />
+  </div>
+
+  <div class="flex items-center justify-center">
+    <Image class="h-10 w-[229px]" src={horizontalLogo} alt="horizontal logo" />
   </div>
 
   <!--  Event Production -->
@@ -97,6 +104,10 @@ import artCuration from "../assets/services/art-curation.png";
     <Image src={eventProduction4} alt="event production 4" />
   </div>
 
+  <div class="flex items-center justify-center">
+    <Image class="h-10 w-[229px]" src={horizontalLogo} alt="horizontal logo" />
+  </div>
+
   <!--  Art Curation -->
   <Header>Art Curation</Header>
   <p class="px-8 text-center text-xl leading-5 font-light text-white">
@@ -108,5 +119,9 @@ import artCuration from "../assets/services/art-curation.png";
   </p>
   <div class="w-full">
     <Image src={artCuration} alt="art curation" />
+  </div>
+
+  <div class="flex items-center justify-center">
+    <Image class="h-10 w-[229px]" src={horizontalLogo} alt="horizontal logo" />
   </div>
 </div>

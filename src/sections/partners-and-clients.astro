@@ -13,12 +13,12 @@ import Iqos from "../components/sponsors/iqos.astro";
 import Peroni from "../components/sponsors/peroni.astro";
 import Beefeater from "../components/sponsors/beefeater.astro";
 
+import horizontalLogo from "../assets/festa-logo-horizontal.png";
+
 import { Image } from "astro:assets";
 ---
 
-<div
-  class="flex min-h-screen flex-col items-center justify-center gap-y-7 bg-black"
->
+<div class="flex flex-col items-center gap-y-10 bg-black pt-10">
   <h2 class="letter-spacing-[10%] bg-white px-1 text-center font-mono text-3xl">
     PARTNERS &<br />CLIENTS
   </h2>
@@ -61,7 +61,8 @@ import { Image } from "astro:assets";
       <Beefeater />
     </div>
   </div>
-  <div>
-    <Image src={sponsors} alt="Image" />
+  <div class="flex items-center justify-center">
+    <Image class="h-10 w-[229px]" src={horizontalLogo} alt="horizontal logo" />
   </div>
+  <Image src={sponsors} alt="sponsors" />
 </div>
