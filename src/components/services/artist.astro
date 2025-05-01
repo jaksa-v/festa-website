@@ -1,0 +1,23 @@
+---
+const { image, name } = Astro.props;
+
+import { Image } from "astro:assets";
+---
+
+<div class="relative">
+  <Image src={image} alt="artist" />
+  <div class="absolute bottom-2 left-4">
+    {
+      name.includes(" ") ? (
+        <div class="text-festa-500 font-mono text-xl uppercase">
+          <div class="leading-5">{name.split(" ")[0]}</div>
+          <div class="leading-5">{name.split(" ").slice(1).join(" ")}</div>
+        </div>
+      ) : (
+        <span class="text-festa-500 font-mono text-xl leading-5 uppercase">
+          {name}
+        </span>
+      )
+    }
+  </div>
+</div>

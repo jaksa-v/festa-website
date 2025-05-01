@@ -1,0 +1,112 @@
+---
+import Header from "../components/services/header.astro";
+import Artist from "../components/services/artist.astro";
+import { Image } from "astro:assets";
+
+import conceptAndCreative1 from "../assets/services/concept-creative1.png";
+import conceptAndCreative2 from "../assets/services/concept-creative2.png";
+import damianLazarus from "../assets/services/damian-lazarus.png";
+import hernanCattaneo from "../assets/services/hernan-cattaneo.png";
+import morcheeba from "../assets/services/morcheeba.png";
+import mihaiPopoviciu from "../assets/services/mihai-popoviciu.png";
+import designAndMarketing1 from "../assets/services/design-marketing1.png";
+import designAndMarketing2 from "../assets/services/design-marketing2.png";
+import designAndMarketing3 from "../assets/services/design-marketing3.png";
+import designAndMarketing4 from "../assets/services/design-marketing4.png";
+import eventProduction1 from "../assets/services/event-production1.png";
+import eventProduction2 from "../assets/services/event-production2.png";
+import eventProduction3 from "../assets/services/event-production3.png";
+import eventProduction4 from "../assets/services/event-production4.png";
+import artCuration from "../assets/services/art-curation.png";
+---
+
+<div
+  class="flex min-h-screen flex-col items-center justify-center gap-y-7 bg-black"
+>
+  <h2 class="letter-spacing-[10%] bg-white px-1 font-mono text-3xl">
+    SERVICES
+  </h2>
+  <p class="px-8 text-center text-xl font-light text-white">
+    From intimate gatherings to large-scale festivals
+    <span class="font-bold"> our every event is carefully planned </span> managed,
+    and brought to life with a
+    <span class="font-bold"> clear vision and strong execution. </span>
+  </p>
+
+  <!-- Concept & Creative -->
+  <Header>Concept & Creative</Header>
+  <p class="px-8 text-center text-xl leading-5 font-light text-white">
+    Every event starts with a strong idea. From storytelling and branding to
+    unique formats, the focus is on developing concepts that give each project
+    its own identity. Whether shaping a festival, brand activation, or cultural
+    event, the goal is to create something original that connects with the
+    audience.
+  </p>
+  <div class="w-full">
+    <Image src={conceptAndCreative1} alt="concept and creative 1" />
+    <Image src={conceptAndCreative2} alt="concept and creative 2" />
+  </div>
+
+  <!--  Artist Booking -->
+  <Header>Artist Bookings</Header>
+  <p class="px-8 text-center text-xl leading-5 font-light text-white">
+    Bringing world-class talent to the stage is key to any successful event.
+    With experience in booking international DJs, musicians, and
+    multidisciplinary artists, the network includes names like John Malkovich,
+    Isabella Rossellini, Morcheeba, Nouvelle Vague, Hernan Cattaneo, and Damian
+    Lazarus. From negotiations to full logistical support, everything is handled
+    from start to finish.
+  </p>
+  <div class="grid w-full grid-cols-2">
+    <Artist image={damianLazarus} name="Damian Lazarus" />
+    <Artist image={hernanCattaneo} name="Hernan Cattaneo" />
+    <Artist image={mihaiPopoviciu} name="Mihai Popoviciu" />
+    <Artist image={morcheeba} name="Morcheeba" />
+  </div>
+  <p class="text-center text-lg text-white">AND MANY MORE...</p>
+
+  <!--  Design & Marketing -->
+  <Header>Design & Marketing</Header>
+  <p class="px-8 text-center text-xl leading-5 font-light text-white">
+    A strong visual identity and the right strategy ensure that every event
+    makes an impact. From branding, stage design, and digital campaigns to PR
+    and media partnerships, everything is carefully crafted to reach the right
+    audience. Creative direction meets modern marketing, delivering the
+    visibility and engagement each project deserves.
+  </p>
+  <div class="grid w-full grid-cols-2">
+    <Image src={designAndMarketing1} alt="design and marketing 1" />
+    <Image src={designAndMarketing2} alt="design and marketing 2" />
+    <Image src={designAndMarketing3} alt="design and marketing 3" />
+    <Image src={designAndMarketing4} alt="design and marketing 4" />
+  </div>
+
+  <!--  Event Production -->
+  <Header>Event Production</Header>
+  <p class="px-8 text-center text-xl leading-5 font-light text-white">
+    From small gatherings to large-scale festivals, flawless execution is at the
+    core of every project. This includes venue selection, technical setup,
+    logistics, and on-site management, ensuring a smooth experience for artists,
+    guests, and audiences. Every detail is handled with efficiency and
+    precision.
+  </p>
+  <div class="grid w-full grid-cols-2">
+    <Image src={eventProduction1} alt="event production 1" />
+    <Image src={eventProduction2} alt="event production 2" />
+    <Image src={eventProduction3} alt="event production 3" />
+    <Image src={eventProduction4} alt="event production 4" />
+  </div>
+
+  <!--  Art Curation -->
+  <Header>Art Curation</Header>
+  <p class="px-8 text-center text-xl leading-5 font-light text-white">
+    Merging music, space, and visual art, each project integrates installations,
+    exhibitions, and performances to add another dimension to the experience.
+    Whether selecting site-specific installations, large-scale visuals, or
+    conceptual exhibitions, the goal is to bring fresh artistic perspectives
+    into the events.
+  </p>
+  <div class="w-full">
+    <Image src={artCuration} alt="art curation" />
+  </div>
+</div>
