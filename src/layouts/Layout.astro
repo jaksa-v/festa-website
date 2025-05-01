@@ -2,6 +2,7 @@
 import Navbar from "../components/navbar/Navbar.astro";
 import ContactButton from "../components/modal/ContactButton.vue";
 import "../styles/global.css";
+import Footer from "../sections/footer.astro";
 ---
 
 <!doctype html>
@@ -21,6 +22,7 @@ import "../styles/global.css";
       <slot />
     </div>
     <ContactButton client:only="vue" />
+    <Footer />
   </body>
 </html>
 

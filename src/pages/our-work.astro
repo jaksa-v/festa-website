@@ -1,9 +1,144 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+import arrowRight from "../assets/arrow-right.svg";
+
+const imageModules = import.meta.glob("../assets/our-work/*", { eager: true });
+
+const work = await getCollection("work");
+const workWithImages = work.map((item) => {
+  const imagePath = `../assets/our-work/${item.data.image}`;
+  const imageModule = imageModules[imagePath];
+  return {
+    ...item,
+    // @ts-ignore - TypeScript doesn't understand the structure of import.meta.glob() at compile time
+    imageUrl: imageModule?.default || null,
+  };
+});
+
+const defaultColor = "#ff5e5e";
 ---
 
 <Layout>
-  <div class="flex h-screen items-center justify-center">
-    <p>Our Work Page</p>
+  <div class="mt-[50px] flex flex-col items-center justify-center">
+    <p class="mt-3 px-4 text-center text-xl font-light text-white">
+      Fešta is a leading creative organization in Montenegro, specializing in
+      music, event production, and cultural projects. Rooted in electronic
+      music, visual arts, and cultural heritage,
+      <span class="font-bold">
+        we transform spaces into unique, story-driven events.
+      </span> Our work spans full-scale event production, artist booking, stage design,
+      creative direction, and marketing, ensuring a seamless blend of creativity
+      and execution.
+    </p>
+    <p class="mt-8 px-8 text-center text-xl font-light text-white">
+      From international festivals to bespoke brand activations,
+      <span class="font-bold">
+        Fešta creates impactful experiences that engage audiences and redefine
+        cultural landscapes.
+      </span>
+    </p>
+    <div class="mt-14 w-full">
+      {
+        workWithImages.map((item) => (
+          <div
+            class="relative flex h-[360px] w-full flex-col gap-y-3 bg-cover bg-center p-4"
+            style={
+              item.imageUrl
+                ? `background-image: url('${item.imageUrl.src}');`
+                : ""
+            }
+          >
+            <h3 class="text-[38px] leading-[34px] font-light text-white">
+              {item.data.title}
+            </h3>
+            <div class="flex max-w-[250px] flex-wrap gap-1">
+              {item.data.tags.map((tag) => (
+                <div class="tag-container flex cursor-pointer items-center justify-center border border-white px-2 py-1.5 transition-all duration-300 hover:bg-white/20">
+                  <span class="text-[10px] font-light tracking-wide text-white uppercase">
+                    {tag}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div class="absolute right-4 bottom-3.5 left-4 flex justify-between">
+              {item.data.links.includes("gallery") && (
+                <div class="link-container group flex gap-x-2">
+                  <a
+                    href="/"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                    style={`--project-color: ${item.data.color || defaultColor}`}
+                  >
+                    See
+                    <br />
+                    Gallery
+                  </a>
+                  <img
+                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                    src={arrowRight.src}
+                    alt="Arrow Left"
+                  />
+                </div>
+              )}
+              {item.data.links.includes("aftermovie") && (
+                <div class="link-container group flex gap-x-2">
+                  <a
+                    href="/"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                    style={`--project-color: ${item.data.color || defaultColor}`}
+                  >
+                    The
+                    <br />
+                    Aftermovie
+                  </a>
+                  <img
+                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                    src={arrowRight.src}
+                    alt="Arrow Left"
+                  />
+                </div>
+              )}
+              {item.data.links.includes("dj") && (
+                <div class="link-container group flex gap-x-2">
+                  <a
+                    href="/"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                    style={`--project-color: ${item.data.color || defaultColor}`}
+                  >
+                    Full
+                    <br />
+                    Dj Set
+                  </a>
+                  <img
+                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                    src={arrowRight.src}
+                    alt="Arrow Left"
+                  />
+                </div>
+              )}
+              {item.data.links.includes("commercial") && (
+                <div class="link-container group flex gap-x-2">
+                  <a
+                    href="/"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                    style={`--project-color: ${item.data.color || defaultColor}`}
+                  >
+                    The
+                    <br />
+                    Commercial
+                  </a>
+                  <img
+                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                    src={arrowRight.src}
+                    alt="Arrow Left"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </Layout>
