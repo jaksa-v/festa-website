@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Rubix Festival 2024",
+    "title": "Rubix<br />Festival<br /><span class=\"font-bold italic\">2024</span>",
     "tags": [
       "Event Planning",
       "Creative Concept",
@@ -15,15 +15,12 @@
       "Logistics"
     ],
     "image": "rubix-festival-2024.png",
-    "links": [
-      "gallery",
-      "aftermovie"
-    ],
+    "links": ["gallery", "aftermovie"],
     "color": "#ff5e5e"
   },
   {
     "id": 2,
-    "title": "Get Lost Montenegro",
+    "title": "Get Lost<br />Montenegro<br /><span class=\"font-bold italic\">2024</span>",
     "tags": [
       "Event Planning",
       "Creative Concept",
@@ -37,14 +34,12 @@
       "Logistics"
     ],
     "image": "get-lost-montenegro.png",
-    "links": [
-      "gallery"
-    ],
+    "links": ["gallery"],
     "color": "#4da6ff"
   },
   {
     "id": 3,
-    "title": "Valentin Huedo at Historic Hotel Podgorica",
+    "title": "<span class=\"font-bold italic\">Valentin Huedo</span><br>at Historic Hotel<br />Podgorica",
     "tags": [
       "Event Planning",
       "Creative Concept",
@@ -56,15 +51,12 @@
       "Logistics"
     ],
     "image": "valentin-huedo.png",
-    "links": [
-      "gallery",
-      "dj"
-    ],
+    "links": ["gallery", "dj"],
     "color": "#ffac33"
   },
   {
     "id": 4,
-    "title": "Mihai Popoviciu at Kampana Tower for Fešta",
+    "title": "Mihai Popoviciu at<br /><span class=\"font-bold italic\">Kampana Tower</span><br />for Fešta",
     "tags": [
       "Event Planning",
       "Creative Concept",
@@ -78,15 +70,12 @@
       "Logistics"
     ],
     "image": "mihai-popoviciu.png",
-    "links": [
-      "gallery",
-      "aftermovie"
-    ],
+    "links": ["gallery", "aftermovie"],
     "color": "#66e0b3"
   },
   {
     "id": 5,
-    "title": "Honda Motors\nCommercial",
+    "title": "<span class=\"font-bold italic\">Honda Motors</span><br>Commercial",
     "tags": [
       "Event Planning",
       "Creative Concept",
@@ -100,10 +89,7 @@
       "Logistics"
     ],
     "image": "honda.png",
-    "links": [
-      "gallery",
-      "commercial"
-    ],
+    "links": ["gallery", "commercial"],
     "color": "#ff5e5e"
   }
 ]

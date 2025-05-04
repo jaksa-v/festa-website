@@ -7,7 +7,7 @@ import OtherNavbarDesktop from "./OtherNavbarDesktop.astro";
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="fixed top-0 w-full bg-black shadow-md">
+<nav class="fixed top-0 z-50 w-full bg-black shadow-md">
   {
     currentPath === "/" ? (
       <>

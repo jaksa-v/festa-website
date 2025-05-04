@@ -50,9 +50,10 @@ const defaultColor = "#ff5e5e";
                 : ""
             }
           >
-            <h3 class="text-[38px] leading-[34px] font-light text-white">
-              {item.data.title}
-            </h3>
+            <h3
+              class="text-[38px] leading-[34px] font-light text-white"
+              set:html={item.data.title}
+            />
             <div class="flex max-w-[250px] flex-wrap gap-1">
               {item.data.tags.map((tag) => (
                 <div class="tag-container flex cursor-pointer items-center justify-center border border-white px-2 py-1.5 transition-all duration-300 hover:bg-white/20">
