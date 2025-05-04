@@ -14,4 +14,15 @@ const work = defineCollection({
   }),
 });
 
-export const collections = { work };
+const gallery = defineCollection({
+  loader: file("src/content/gallery.json"),
+  schema: z.object({
+    id: z.number(),
+    title: z.string(),
+    description1: z.string(),
+    description2: z.string(),
+    images: z.array(z.string()),
+  }),
+});
+
+export const collections = { work, gallery };
