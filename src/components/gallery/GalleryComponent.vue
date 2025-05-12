@@ -9,7 +9,7 @@ import {
 import { ref, onMounted } from "vue";
 
 // Import all gallery images
-const galleryImagesModules = import.meta.glob("/src/assets/gallery/*", { eager: true });
+const galleryImagesModules = import.meta.glob("@/assets/gallery/*", { eager: true });
 
 // Define props for gallery data passed from Astro
 const props = defineProps<{
@@ -28,17 +28,17 @@ const galleryImages = ref<
 // Create fallback images if needed
 const fallbackImages = [
   {
-    src: "/src/assets/gallery/gallery.png",
+    src: new URL("@/assets/gallery/gallery.png", import.meta.url).href,
     altSrc: "https://placehold.co/600x400/e44/fff?text=Gallery+Image",
     alt: "Gallery Image 1",
   },
   {
-    src: "/src/assets/gallery/gallery.png",
+    src: new URL("@/assets/gallery/gallery.png", import.meta.url).href,
     altSrc: "https://placehold.co/600x400/3d6/fff?text=Rubix+Festival",
     alt: "Rubix Festival 2024",
   },
   {
-    src: "/src/assets/gallery/gallery.png",
+    src: new URL("@/assets/gallery/gallery.png", import.meta.url).href,
     altSrc: "https://placehold.co/600x400/36d/fff?text=Mihai+Popoviciu",
     alt: "Mihai Popoviciu",
   },
@@ -59,12 +59,12 @@ onMounted(() => {
       if (gallery && gallery.images && Array.isArray(gallery.images)) {
         galleryImages.value = gallery.images.map(
           (imageName: string, index: number) => {
-            // Get image path and use the import.meta.glob pattern similar to your our-work.astro file
-            const imagePath = `/src/assets/gallery/${imageName}`;
+            // Get image path and use the import.meta.glob pattern with the @ alias
+            const imagePath = `@/assets/gallery/${imageName}`;
             const imageModule = galleryImagesModules[imagePath];
             return {
-              // Use the actual image or fallback to the placeholder
-              src: imageModule?.default?.src || `/src/assets/gallery/${imageName}`,
+              // Use the actual image or fallback to a URL constructed with import.meta.url
+              src: imageModule?.default?.src || new URL(`@/assets/gallery/${imageName}`, import.meta.url).href,
               altSrc: `https://placehold.co/600x400/${index % 2 === 0 ? "e44" : "36d"}/fff?text=Image+${index + 1}`,
               alt: `${gallery.title} - Image ${index + 1}`,
             };
