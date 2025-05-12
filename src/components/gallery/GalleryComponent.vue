@@ -8,6 +8,9 @@ import {
 } from "@/components/ui/carousel";
 import { ref, onMounted } from "vue";
 
+// Import all gallery images
+const galleryImagesModules = import.meta.glob("/src/assets/gallery/*", { eager: true });
+
 // Define props for gallery data passed from Astro
 const props = defineProps<{
   galleryData?: any;
@@ -54,14 +57,14 @@ onMounted(() => {
         : props.galleryData;
 
       if (gallery && gallery.images && Array.isArray(gallery.images)) {
-        // Use Vite's import.meta.glob to import all images from src/assets/gallery
-        const imageModules = import.meta.glob('../../assets/gallery/*', { eager: true, import: 'default' });
         galleryImages.value = gallery.images.map(
           (imageName: string, index: number) => {
-            // Find the imported image path
-            const importedSrc = imageModules[`../../assets/gallery/${imageName}`] || '';
+            // Get image path and use the import.meta.glob pattern similar to your our-work.astro file
+            const imagePath = `/src/assets/gallery/${imageName}`;
+            const imageModule = galleryImagesModules[imagePath];
             return {
-              src: importedSrc,
+              // Use the actual image or fallback to the placeholder
+              src: imageModule?.default?.src || `/src/assets/gallery/${imageName}`,
               altSrc: `https://placehold.co/600x400/${index % 2 === 0 ? "e44" : "36d"}/fff?text=Image+${index + 1}`,
               alt: `${gallery.title} - Image ${index + 1}`,
             };
