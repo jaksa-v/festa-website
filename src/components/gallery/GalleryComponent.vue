@@ -54,10 +54,14 @@ onMounted(() => {
         : props.galleryData;
 
       if (gallery && gallery.images && Array.isArray(gallery.images)) {
+        // Use Vite's import.meta.glob to import all images from src/assets/gallery
+        const imageModules = import.meta.glob('../../assets/gallery/*', { eager: true, import: 'default' });
         galleryImages.value = gallery.images.map(
           (imageName: string, index: number) => {
+            // Find the imported image path
+            const importedSrc = imageModules[`../../assets/gallery/${imageName}`] || '';
             return {
-              src: `/src/assets/gallery/${imageName}`,
+              src: importedSrc,
               altSrc: `https://placehold.co/600x400/${index % 2 === 0 ? "e44" : "36d"}/fff?text=Image+${index + 1}`,
               alt: `${gallery.title} - Image ${index + 1}`,
             };
