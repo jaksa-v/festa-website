@@ -17,6 +17,24 @@ const handleContactClick = () => {
   isContactModalOpen.value = true;
   isMenuOpen.value = false;
 };
+
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    // Get the position of the section
+    const sectionPosition = section.getBoundingClientRect().top;
+    // Calculate the position with a buffer (80px for navbar height)
+    const offsetPosition = sectionPosition + window.pageYOffset - 40;
+
+    // Scroll to the section with the buffer
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+
+    isMenuOpen.value = false;
+  }
+};
 </script>
 
 <template>
@@ -61,11 +79,21 @@ const handleContactClick = () => {
       class="absolute top-8 left-0 w-full py-4 transition-all duration-0 ease-in-out"
     >
       <nav class="flex flex-col items-center">
-        <a class="py-2 text-white hover:text-gray-300" href="/"> About Us </a>
+        <button
+          class="py-2 text-white hover:text-gray-300"
+          @click="scrollToSection('about')"
+        >
+          About Us
+        </button>
         <a class="py-2 text-white hover:text-gray-300" href="/our-work">
           Our Work
         </a>
-        <a class="py-2 text-white hover:text-gray-300" href="/"> Services </a>
+        <button
+          class="py-2 text-white hover:text-gray-300"
+          @click="scrollToSection('services')"
+        >
+          Services
+        </button>
         <a class="py-2 text-white hover:text-gray-300" href="/gallery">
           Gallery
         </a>
