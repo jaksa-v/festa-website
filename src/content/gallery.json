@@ -2,9 +2,17 @@
   {
     "id": 1,
     "name": "Rubix Festival 2024",
-    "title": "Rubix festival, 2. edition - Done!",
+    "title": "RUBIX FESTIVAL,<br />2. edition - Done!",
     "description1": "Get Lost Montenegro Festival 2024 marked the first European edition of the globally acclaimed “Get Lost” brand, in collaboration with the renowned organization Fešta. Held in the stunning setting of the Kanli Kula fortress in Herceg Novi, the festival aimed to promote electronic music, cultural heritage, and the natural beauty of Montenegro. This event brought together music lovers from around the world while providing a platform for local artists and cultural organizations.",
     "description2": "The festival attracted over 2500 attendees, including many international guests. It featured performances by more than 10 world-renowned DJs such as Seth Troxler, Damian Lazarus, and Jan Blomqvist, as well as over 10 regional artists showcasing diverse talents. Three unique light installations enhanced the magical ambiance, set against the historic backdrop of Kanli Kula.",
-    "images": ["gallery.png", "gallery.png", "gallery.png"]
+    "images": ["gallery.png", "gallery2.png"]
+  },
+  {
+    "id": 2,
+    "name": "Get Lost Montenegro 2024",
+    "title": "Get Lost<br />Montenegro 2024",
+    "description1": "Get Lost Montenegro Festival 2024 marked the first European edition of the globally acclaimed “Get Lost” brand, in collaboration with the renowned organization Fešta. Held in the stunning setting of the Kanli Kula fortress in Herceg Novi, the festival aimed to promote electronic music, cultural heritage, and the natural beauty of Montenegro. This event brought together music lovers from around the world while providing a platform for local artists and cultural organizations.",
+    "description2": "The festival attracted over 2500 attendees, including many international guests. It featured performances by more than 10 world-renowned DJs such as Seth Troxler, Damian Lazarus, and Jan Blomqvist, as well as over 10 regional artists showcasing diverse talents. Three unique light installations enhanced the magical ambiance, set against the historic backdrop of Kanli Kula.",
+    "images": ["gallery2.png", "gallery.png"]
   }
 ]

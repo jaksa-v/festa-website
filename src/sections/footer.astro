@@ -1,10 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import Socials from "../components/socials.astro";
+
+import horizontalLogo from "../assets/festa-logo-horizontal.png";
 ---
 
 <div
-  class="flex flex-col items-center gap-y-8 bg-black bg-[url('/src/assets/footer-bg-mobile.png')] bg-cover bg-center bg-no-repeat pt-10 pb-36"
+  class="flex flex-col items-center gap-y-8 bg-black bg-[url('/src/assets/footer-bg-mobile.png')] bg-cover bg-center bg-no-repeat py-10"
 >
   <h2 class="text-center text-3xl text-white">Like what you see?</h2>
   <button
@@ -31,4 +33,5 @@ import Socials from "../components/socials.astro";
     <p>Copyright © 2025 Fešta.</p>
     <p>All rights reserved.</p>
   </div>
+  <Image class="h-5 w-[114px]" src={horizontalLogo} alt="horizontal logo" />
 </div>
