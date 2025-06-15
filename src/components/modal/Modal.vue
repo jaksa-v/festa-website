@@ -39,9 +39,12 @@ const handleClose = () => {
         class="fixed inset-0 z-50 flex items-center justify-center"
       >
         <div
-          class="relative mx-4 max-h-[90vh] w-full max-w-2xl transform overflow-auto bg-[url('/src/assets/modal-bg-mobile.png')] bg-cover bg-center bg-no-repeat p-3 md:bg-gray-200"
+          class="relative mx-4 max-h-[90vh] w-full max-w-2xl transform overflow-auto bg-[url('/src/assets/modal-bg-mobile.png')] bg-cover bg-center bg-no-repeat p-3 md:max-w-4xl md:bg-gray-200 md:p-6"
         >
-          <button @click="handleClose" class="absolute top-3 right-3">
+          <button
+            @click="handleClose"
+            class="absolute top-3 right-3 cursor-pointer md:top-6 md:right-6"
+          >
             <svg
               width="20"
               height="20"

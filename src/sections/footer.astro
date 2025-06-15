@@ -3,35 +3,52 @@ import { Image } from "astro:assets";
 import Socials from "../components/socials.astro";
 
 import horizontalLogo from "../assets/festa-logo-horizontal.png";
+import aboveFooter from "../assets/above_footer.png";
 ---
 
-<div
-  class="flex flex-col items-center gap-y-8 bg-black bg-[url('/src/assets/footer-bg-mobile.png')] bg-cover bg-center bg-no-repeat py-10"
->
-  <h2 class="text-center text-3xl text-white">Like what you see?</h2>
-  <button
-    class="bg-festa-500 flex items-center justify-center px-5 py-2 text-lg font-medium text-white transition-transform hover:-translate-y-1"
+<div>
+  <Image
+    src={aboveFooter}
+    alt="Above footer background"
+    class="hidden w-full md:block"
+    loading="lazy"
+  />
+  <div
+    class="flex flex-col items-center gap-y-8 bg-black bg-[url('/src/assets/footer_desktop.png')] bg-cover bg-center bg-no-repeat py-10 md:py-16"
   >
-    LET'S TALK
-  </button>
-  <div class="flex flex-col gap-y-4 py-2 text-xl font-light text-white">
-    <p>office@festa.live</p>
-    <p>+382 69 123 321</p>
-    <p>+382 67 987 789</p>
-  </div>
-  <Socials />
-  <div>
-    <a
-      href=""
-      target="_blank"
-      class="text-festa-500 text-center text-xl font-light underline"
+    <h2 class="text-center text-3xl text-white md:text-5xl md:font-light">
+      Like what you see?
+    </h2>
+    <button
+      class="bg-festa-500 flex items-center justify-center px-5 py-2 text-lg font-medium text-white transition-transform hover:-translate-y-1 md:px-8 md:py-4 md:text-2xl"
     >
-      Download Fešta press pack
-    </a>
+      LET'S TALK
+    </button>
+    <div
+      class="flex flex-col gap-y-4 py-2 text-xl font-light text-white md:flex-row md:justify-center md:gap-x-16 md:gap-y-0 md:text-3xl"
+    >
+      <p>office@festa.live</p>
+      <p>+382 69 123 321</p>
+      <p>+382 67 987 789</p>
+    </div>
+    <Socials />
+    <div>
+      <a
+        href=""
+        target="_blank"
+        class="text-festa-500 text-center text-xl font-light underline md:text-2xl"
+      >
+        Download Fešta press pack
+      </a>
+    </div>
+    <div class="text-center text-xs leading-5 text-white md:text-base">
+      <p>Copyright © 2025 Fešta.</p>
+      <p>All rights reserved.</p>
+    </div>
+    <Image
+      class="h-5 w-[114px] md:h-8 md:w-[200px]"
+      src={horizontalLogo}
+      alt="horizontal logo"
+    />
   </div>
-  <div class="text-center text-xs leading-5 text-white">
-    <p>Copyright © 2025 Fešta.</p>
-    <p>All rights reserved.</p>
-  </div>
-  <Image class="h-5 w-[114px]" src={horizontalLogo} alt="horizontal logo" />
 </div>

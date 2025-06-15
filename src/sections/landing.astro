@@ -1,8 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+import horizontalLogo from "../assets/festa-logo-horizontal.png";
+---
+
 <div
   class="flex min-h-screen items-center justify-center bg-[linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/src/assets/landing.jpeg')] bg-cover bg-center bg-no-repeat md:bg-black"
 >
-  <h2 class="text-center text-[38px] leading-[38px] font-light text-white">
-    WE DON&apos;T<br /> FOLLOW TRENDS.<br />
-    <span class="font-bold">WE CREATE<br /> THEM.</span>
-  </h2>
+  <div class="flex flex-col items-center gap-y-8">
+    <h2
+      class="text-center text-[38px] leading-[38px] font-light text-white md:text-8xl md:leading-[80px]"
+    >
+      WE DON&apos;T<br class="md:hidden" /> FOLLOW TRENDS.<br />
+      <span class="font-bold">WE CREATE<br class="md:hidden" /> THEM.</span>
+    </h2>
+
+    <Image
+      class="hidden h-[105px] w-[600px] md:block"
+      src={horizontalLogo}
+      alt="horizontal logo"
+    />
+  </div>
 </div>

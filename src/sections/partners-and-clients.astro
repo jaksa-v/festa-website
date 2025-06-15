@@ -1,5 +1,6 @@
 ---
 import sponsors from "../assets/sponsors.png";
+import sponsorsBg from "../assets/sponsors_bg.png";
 import M from "../components/sponsors/m.astro";
 import Crosstown from "../components/sponsors/crosstown.astro";
 import Ckb from "../components/sponsors/ckb.astro";
@@ -18,51 +19,125 @@ import horizontalLogo from "../assets/festa-logo-horizontal.png";
 import { Image } from "astro:assets";
 ---
 
-<div class="flex flex-col items-center pt-10">
-  <h2 class="letter-spacing-[10%] bg-white px-1 text-center font-mono text-3xl">
-    PARTNERS &<br />CLIENTS
+<div
+  class="mt-10 flex flex-col items-center bg-cover bg-center pt-10 md:pt-14"
+  style={`background-image: url('${sponsorsBg.src}');`}
+>
+  <h2
+    class="letter-spacing-[10%] bg-white px-1 text-center font-mono text-3xl md:px-3 md:py-1 md:text-7xl"
+  >
+    PARTNERS &<br class="md:hidden" /> CLIENTS
   </h2>
   <div
-    class="flex max-w-[290px] flex-col gap-y-5 pt-5 text-center text-xl leading-5 font-light text-white"
+    class="flex max-w-[290px] flex-col gap-y-5 pt-5 text-center text-xl leading-5 font-light text-white md:max-w-[1400px] md:pt-10 md:text-2xl md:leading-8"
   >
-    <p>
-      Over the years we have collaborated with global brands, cultural
-      institutions, tourism boards, and creative organizations.<span
-        class="font-bold"
-      >
+    <!-- Mobile layout - keep as separate paragraphs -->
+    <div class="md:hidden">
+      <p>
+        Over the years we have collaborated with global brands, cultural
+        institutions, tourism boards, and creative organizations.<span
+          class="font-bold"
+        >
+          Our success is built on strong partnerships and satisfied clients.
+        </span>
+      </p>
+      <p>Together, we turn ideas into reality!</p>
+    </div>
+
+    <!-- Desktop layout - restructured text -->
+    <div class="hidden md:block">
+      <p class="mb-4">
+        Over the years we have collaborated with global brands, cultural
+        institutions, tourism boards, and creative organizations.
+      </p>
+      <p class="mb-4 font-bold">
         Our success is built on strong partnerships and satisfied clients.
-      </span>
-    </p>
-    <p>Together, we turn ideas into reality!</p>
+      </p>
+      <p>Together, we turn ideas into reality!</p>
+    </div>
   </div>
-  <div class="mt-6 flex w-[290px] flex-col gap-y-10">
-    <div class="flex justify-around">
+  <div
+    class="mt-6 flex w-[290px] flex-col gap-y-10 md:mt-16 md:w-full md:max-w-[1400px] md:flex-row md:flex-wrap md:justify-center md:gap-x-20 md:gap-y-16"
+  >
+    <!-- Mobile layout -->
+    <div class="flex justify-around md:hidden">
       <M />
       <Crosstown />
     </div>
-    <div class="flex justify-center">
+    <div class="flex justify-center md:hidden">
       <Ckb />
     </div>
-    <div class="flex justify-center">
+    <div class="flex justify-center md:hidden">
       <Skymusic />
     </div>
-    <div class="flex justify-evenly">
+    <div class="flex justify-evenly md:hidden">
       <Chameleon />
       <Setap />
     </div>
-    <div class="flex justify-evenly">
+    <div class="flex justify-evenly md:hidden">
       <Kodio />
       <Mkm />
       <GlavniGrad />
     </div>
-    <div class="flex justify-evenly">
+    <div class="flex justify-evenly md:hidden">
       <Iqos />
       <Peroni />
       <Beefeater />
     </div>
+
+    <!-- Desktop layout -->
+    <div class="hidden md:flex md:w-full md:flex-col md:gap-y-12">
+      <!-- First row: M, CKB, Crosstown -->
+      <div class="flex items-center justify-between">
+        <div class="flex justify-center">
+          <M />
+        </div>
+        <div class="flex justify-center">
+          <Ckb />
+        </div>
+        <div class="flex justify-center">
+          <Crosstown />
+        </div>
+      </div>
+
+      <!-- Second row: SkyMusic, Chameleon, Setap -->
+      <div class="flex items-center justify-around">
+        <div class="flex justify-center">
+          <Skymusic />
+        </div>
+        <div class="flex justify-center">
+          <Chameleon />
+        </div>
+        <div class="flex justify-center">
+          <Setap />
+        </div>
+      </div>
+
+      <!-- Third row: Kodio, Mkm, GlavniGrad, Iqos, Peroni, Beefeater -->
+      <div class="flex items-center justify-between">
+        <div class="flex justify-center">
+          <Kodio />
+        </div>
+        <div class="flex justify-center">
+          <Mkm />
+        </div>
+        <div class="flex justify-center">
+          <GlavniGrad />
+        </div>
+        <div class="flex justify-center">
+          <Iqos />
+        </div>
+        <div class="flex justify-center">
+          <Peroni />
+        </div>
+        <div class="flex justify-center">
+          <Beefeater />
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="mt-12 flex items-center justify-center">
+  <div class="mt-12 flex items-center justify-center md:mb-10">
     <Image class="h-10 w-[229px]" src={horizontalLogo} alt="horizontal logo" />
   </div>
-  <Image src={sponsors} alt="sponsors" />
+  <Image src={sponsors} alt="sponsors" class="md:hidden" />
 </div>

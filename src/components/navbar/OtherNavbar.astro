@@ -1,0 +1,30 @@
+---
+import arrowLeft from "../../assets/arrow-left.svg";
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="fixed top-0 z-50 flex w-full bg-black p-4 shadow-md">
+  <div class="container mx-auto flex w-full justify-between">
+    <a
+      href="/"
+      class="text-festa-500 flex items-center gap-x-2 font-mono md:text-4xl"
+    >
+      <img src={arrowLeft.src} alt="Arrow Left" class="md:h-6" />
+      BACK
+    </a>
+    {
+      currentPath.includes("/our-work") && (
+        <span class="block font-mono text-xl text-white md:text-4xl">
+          /OUR WORK
+        </span>
+      )
+    }
+    {
+      currentPath.includes("/gallery") && (
+        <span class="block font-mono text-xl text-white md:text-4xl">
+          /GALLERY
+        </span>
+      )
+    }
+  </div>
+</nav>

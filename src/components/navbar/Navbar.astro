@@ -1,8 +1,7 @@
 ---
 import NavbarDesktop from "./NavbarDesktop.astro";
 import NavbarMobile from "./NavbarMobile.vue";
-import OtherNavbarMobile from "./OtherNavbarMobile.astro";
-import OtherNavbarDesktop from "./OtherNavbarDesktop.astro";
+import OtherNavbar from "./OtherNavbar.astro";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -20,15 +19,7 @@ const currentPath = Astro.url.pathname;
         </div>
       </>
     ) : (
-      <>
-        <div class="hidden md:block">
-          <OtherNavbarDesktop />
-        </div>
-
-        <div class="block md:hidden">
-          <OtherNavbarMobile />
-        </div>
-      </>
+      <OtherNavbar />
     )
   }
 </nav>

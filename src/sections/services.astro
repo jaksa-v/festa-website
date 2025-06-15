@@ -1,6 +1,7 @@
 ---
 import Header from "../components/services/header.astro";
 import Artist from "../components/services/artist.astro";
+import ArtistCarousel from "../components/services/ArtistCarousel.vue";
 import { Image } from "astro:assets";
 
 const { id } = Astro.props;
@@ -10,6 +11,7 @@ import conceptAndCreative2 from "../assets/services/concept-creative2.png";
 import damianLazarus from "../assets/services/damian-lazarus.png";
 import hernanCattaneo from "../assets/services/hernan-cattaneo.png";
 import morcheeba from "../assets/services/morcheeba.png";
+import armen from "../assets/services/armen-miran.png";
 import mihaiPopoviciu from "../assets/services/mihai-popoviciu.png";
 import designAndMarketing1 from "../assets/services/design-marketing1.png";
 import designAndMarketing2 from "../assets/services/design-marketing2.png";
@@ -21,13 +23,75 @@ import eventProduction3 from "../assets/services/event-production3.png";
 import eventProduction4 from "../assets/services/event-production4.png";
 import artCuration from "../assets/services/art-curation.png";
 import horizontalLogo from "../assets/festa-logo-horizontal.png";
+
+// Artists data for carousel
+const artists = [
+  {
+    image: damianLazarus,
+    name: "Damian Lazarus",
+    description:
+      "Visionary DJ and producer known for his genre-defying sets and immersive Crosstown Rebels events, blending inno-vation with musical mastery.",
+  },
+  {
+    image: hernanCattaneo,
+    name: "Hernan Cattaneo",
+    description:
+      "Legendary Argentine DJ and producer, celebrated for his deep, melodic journeys and his integral role in shaping progressive house",
+  },
+  {
+    image: mihaiPopoviciu,
+    name: "Mihai Popoviciu",
+    description:
+      "Acclaimed Romanian DJ and producer, a pioneer of minimal and deep tech sounds, known for his precision-crafted melodic grooves.",
+  },
+  {
+    image: morcheeba,
+    name: "Morcheeba",
+    description:
+      "Iconic British band effortlessly blending trip-hop, soul, and chillout vibes, delivering timeless musical hits with their signature smooth sound.",
+  },
+  {
+    image: armen,
+    name: "Armen Miran",
+    description:
+      "Renowned Armenian DJ & producer, master of down-tempo and ethereal organic sounds, crafting spiritual musical journeys through music.",
+  },
+];
 ---
 
-<div id={id} class="flex flex-col items-center justify-center gap-y-8 pt-6">
-  <h2 class="letter-spacing-[10%] bg-white px-1 font-mono text-3xl">
+<style>
+  @media (min-width: 768px) {
+    .fade-edges {
+      mask: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+      );
+      -webkit-mask: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+      );
+    }
+  }
+</style>
+
+<div
+  id={id}
+  class="flex flex-col items-center justify-center gap-y-8 pt-6 md:pt-24"
+>
+  <h2
+    class="letter-spacing-[10%] bg-white px-1 font-mono text-3xl md:px-3 md:py-1 md:text-7xl"
+  >
     SERVICES
   </h2>
-  <p class="mt-3 px-8 text-center text-xl font-light text-white">
+  <p
+    class="mt-8 px-8 text-center text-xl font-light text-white md:mt-16 md:max-w-[1200px] md:text-4xl"
+  >
     From intimate gatherings to large-scale festivals
     <span class="font-bold"> our every event is carefully planned </span> managed,
     and brought to life with a
@@ -35,16 +99,20 @@ import horizontalLogo from "../assets/festa-logo-horizontal.png";
   </p>
 
   <!-- Concept & Creative -->
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center md:mt-24">
     <Header>Concept & Creative</Header>
-    <p class="mt-3 px-8 text-center text-xl leading-5 font-light text-white">
+    <p
+      class="mt-3 px-8 text-center text-xl leading-5 font-light text-white md:mt-5 md:max-w-[1300px] md:text-2xl"
+    >
       Every event starts with a strong idea. From storytelling and branding to
       unique formats, the focus is on developing concepts that give each project
       its own identity. Whether shaping a festival, brand activation, or
       cultural event, the goal is to create something original that connects
       with the audience.
     </p>
-    <div class="mt-5 w-full">
+    <div
+      class="fade-edges mt-5 flex w-full flex-col md:my-12 md:flex-row md:gap-x-4"
+    >
       <Image src={conceptAndCreative1} alt="concept and creative 1" />
       <Image src={conceptAndCreative2} alt="concept and creative 2" />
     </div>
@@ -57,7 +125,9 @@ import horizontalLogo from "../assets/festa-logo-horizontal.png";
   <!--  Artist Booking -->
   <div class="flex flex-col items-center">
     <Header>Artist Booking</Header>
-    <p class="mt-3 px-8 text-center text-xl leading-5 font-light text-white">
+    <p
+      class="mt-3 px-8 text-center text-xl leading-5 font-light text-white md:mt-5 md:max-w-[1300px] md:text-2xl"
+    >
       Bringing world-class talent to the stage is key to any successful event.
       With experience in booking international DJs, musicians, and
       multidisciplinary artists, the network includes names like John Malkovich,
@@ -65,13 +135,21 @@ import horizontalLogo from "../assets/festa-logo-horizontal.png";
       Damian Lazarus. From negotiations to full logistical support, everything
       is handled from start to finish.
     </p>
-    <div class="mt-5 grid w-full grid-cols-2">
+    <!-- Mobile grid layout -->
+    <div class="mt-5 grid w-full grid-cols-2 md:hidden">
       <Artist image={damianLazarus} name="Damian Lazarus" />
       <Artist image={hernanCattaneo} name="Hernan Cattaneo" />
       <Artist image={mihaiPopoviciu} name="Mihai Popoviciu" />
       <Artist image={morcheeba} name="Morcheeba" />
     </div>
-    <p class="mt-5 text-center text-lg text-white">AND MANY MORE...</p>
+
+    <!-- Desktop carousel layout -->
+    <div class="mt-5 hidden w-full md:block">
+      <ArtistCarousel artists={artists} client:only="vue" />
+    </div>
+    <p class="mt-5 text-center text-lg text-white md:text-2xl">
+      AND MANY MORE...
+    </p>
   </div>
 
   <div class="flex items-center justify-center">
@@ -81,18 +159,38 @@ import horizontalLogo from "../assets/festa-logo-horizontal.png";
   <!--  Design & Marketing -->
   <div class="flex flex-col items-center">
     <Header>Design & Marketing</Header>
-    <p class="mt-3 px-8 text-center text-xl leading-5 font-light text-white">
+    <p
+      class="mt-3 px-8 text-center text-xl leading-5 font-light text-white md:mt-5 md:max-w-[1300px] md:text-2xl"
+    >
       A strong visual identity and the right strategy ensure that every event
       makes an impact. From branding, stage design, and digital campaigns to PR
       and media partnerships, everything is carefully crafted to reach the right
       audience. Creative direction meets modern marketing, delivering the
       visibility and engagement each project deserves.
     </p>
-    <div class="mt-5 grid w-full grid-cols-2">
-      <Image src={designAndMarketing1} alt="design and marketing 1" />
-      <Image src={designAndMarketing2} alt="design and marketing 2" />
-      <Image src={designAndMarketing3} alt="design and marketing 3" />
-      <Image src={designAndMarketing4} alt="design and marketing 4" />
+    <div
+      class="mt-5 grid w-full grid-cols-2 md:mx-auto md:flex md:max-w-[1300px] md:gap-x-4"
+    >
+      <Image
+        class="w-full object-cover"
+        src={designAndMarketing1}
+        alt="design and marketing 1"
+      />
+      <Image
+        class="w-full object-cover"
+        src={designAndMarketing2}
+        alt="design and marketing 2"
+      />
+      <Image
+        class="w-full object-cover"
+        src={designAndMarketing3}
+        alt="design and marketing 3"
+      />
+      <Image
+        class="w-full object-cover"
+        src={designAndMarketing4}
+        alt="design and marketing 4"
+      />
     </div>
   </div>
 
@@ -103,18 +201,38 @@ import horizontalLogo from "../assets/festa-logo-horizontal.png";
   <!--  Event Production -->
   <div class="flex flex-col items-center">
     <Header>Event Production</Header>
-    <p class="mt-3 px-8 text-center text-xl leading-5 font-light text-white">
+    <p
+      class="mt-3 px-8 text-center text-xl leading-5 font-light text-white md:mt-5 md:max-w-[1300px] md:text-2xl"
+    >
       From small gatherings to large-scale festivals, flawless execution is at
       the core of every project. This includes venue selection, technical setup,
       logistics, and on-site management, ensuring a smooth experience for
       artists, guests, and audiences. Every detail is handled with efficiency
       and precision.
     </p>
-    <div class="mt-5 grid w-full grid-cols-2">
-      <Image src={eventProduction1} alt="event production 1" />
-      <Image src={eventProduction2} alt="event production 2" />
-      <Image src={eventProduction3} alt="event production 3" />
-      <Image src={eventProduction4} alt="event production 4" />
+    <div
+      class="mt-5 grid w-full grid-cols-2 md:mx-auto md:flex md:max-w-[1300px] md:gap-x-4"
+    >
+      <Image
+        class="w-full object-cover"
+        src={eventProduction1}
+        alt="event production 1"
+      />
+      <Image
+        class="w-full object-cover"
+        src={eventProduction2}
+        alt="event production 2"
+      />
+      <Image
+        class="w-full object-cover"
+        src={eventProduction3}
+        alt="event production 3"
+      />
+      <Image
+        class="w-full object-cover"
+        src={eventProduction4}
+        alt="event production 4"
+      />
     </div>
   </div>
 
@@ -125,15 +243,19 @@ import horizontalLogo from "../assets/festa-logo-horizontal.png";
   <!--  Art Curation -->
   <div class="flex flex-col items-center">
     <Header>Art Curation</Header>
-    <p class="mt-3 px-8 text-center text-xl leading-5 font-light text-white">
+    <p
+      class="mt-3 px-8 text-center text-xl leading-5 font-light text-white md:mt-5 md:max-w-[1300px] md:text-2xl"
+    >
       Merging music, space, and visual art, each project integrates
       installations, exhibitions, and performances to add another dimension to
       the experience. Whether selecting site-specific installations, large-scale
       visuals, or conceptual exhibitions, the goal is to bring fresh artistic
       perspectives into the events.
     </p>
-    <div class="mt-5 w-full">
-      <Image src={artCuration} alt="art curation" />
+    <div class="mt-5 w-full md:flex md:justify-center">
+      <div class="w-full md:flex md:max-w-4xl md:justify-center">
+        <Image src={artCuration} alt="art curation" />
+      </div>
     </div>
   </div>
 
