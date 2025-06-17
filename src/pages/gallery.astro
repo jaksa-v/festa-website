@@ -2,13 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import GalleryComponent from "../components/gallery/GalleryComponent.vue";
 import { getCollection } from "astro:content";
-
 // Fetch gallery data from content collection
 const galleryData = await getCollection("gallery");
 ---
 
 <Layout>
-  <div class="container mx-auto mt-[60px]">
+  <div class="container mx-auto mt-[60px] md:mt-[104px]">
     <GalleryComponent galleryData={galleryData} client:only="vue" />
   </div>
 </Layout>

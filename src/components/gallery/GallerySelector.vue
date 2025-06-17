@@ -32,14 +32,14 @@ function selectItem(id: number) {
 </script>
 
 <template>
-  <div class="flex w-full flex-wrap gap-2 px-4 pt-5 pb-3">
+  <div class="flex w-full flex-wrap gap-2 px-4 pt-5 pb-3 md:px-0">
     <button
       v-for="item in galleryItems"
-      class="cursor-pointer border border-white bg-transparent px-2 py-1 text-[10px] uppercase transition-all duration-200 hover:bg-white/10"
+      class="cursor-pointer border border-white bg-transparent px-2 py-1 text-[10px] uppercase transition-all duration-200 md:px-7 md:py-3 md:text-base"
       :key="item.id"
       :class="[
         { 'bg-white text-black': selectedItemId === item.id },
-        { 'text-white': selectedItemId !== item.id },
+        { 'text-white hover:bg-white/10': selectedItemId !== item.id },
       ]"
       @click="selectItem(item.id)"
     >

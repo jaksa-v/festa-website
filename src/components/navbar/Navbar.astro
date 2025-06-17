@@ -1,5 +1,5 @@
 ---
-import NavbarDesktop from "./NavbarDesktop.astro";
+import NavbarDesktop from "./NavbarDesktop.vue";
 import NavbarMobile from "./NavbarMobile.vue";
 import OtherNavbar from "./OtherNavbar.astro";
 
@@ -11,7 +11,7 @@ const currentPath = Astro.url.pathname;
     currentPath === "/" ? (
       <>
         <div class="hidden md:block">
-          <NavbarDesktop />
+          <NavbarDesktop client:only="vue" />
         </div>
 
         <div class="block md:hidden">

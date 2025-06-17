@@ -21,29 +21,12 @@ const defaultColor = "#ff5e5e";
 ---
 
 <Layout>
-  <div class="mt-[60px] flex flex-col items-center justify-center">
-    <p class="mt-3 px-4 text-center text-xl font-light text-white">
-      Fešta is a leading creative organization in Montenegro, specializing in
-      music, event production, and cultural projects. Rooted in electronic
-      music, visual arts, and cultural heritage,
-      <span class="font-bold">
-        we transform spaces into unique, story-driven events.
-      </span> Our work spans full-scale event production, artist booking, stage design,
-      creative direction, and marketing, ensuring a seamless blend of creativity
-      and execution.
-    </p>
-    <p class="mt-8 px-8 text-center text-xl font-light text-white">
-      From international festivals to bespoke brand activations,
-      <span class="font-bold">
-        Fešta creates impactful experiences that engage audiences and redefine
-        cultural landscapes.
-      </span>
-    </p>
-    <div class="mt-14 w-full">
+  <div class="flex flex-col items-center justify-center">
+    <div class="mt-[60px] grid w-full grid-cols-1 md:mt-[104px] md:grid-cols-2">
       {
         workWithImages.map((item) => (
           <div
-            class="relative flex h-[360px] w-full flex-col gap-y-3 bg-cover bg-center p-4"
+            class="relative flex h-[360px] w-full flex-col gap-y-3 bg-cover bg-center p-4 md:h-[550px] md:gap-y-8"
             style={
               item.imageUrl
                 ? `background-image: url('${item.imageUrl.src}');`
@@ -51,13 +34,13 @@ const defaultColor = "#ff5e5e";
             }
           >
             <h3
-              class="text-[38px] leading-[34px] font-light text-white"
+              class="text-[38px] leading-[34px] font-light text-white md:text-7xl md:leading-[65px]"
               set:html={item.data.title}
             />
-            <div class="flex max-w-[250px] flex-wrap gap-1">
+            <div class="flex max-w-[250px] flex-wrap gap-1 md:max-w-[500px]">
               {item.data.tags.map((tag) => (
                 <div class="tag-container flex cursor-pointer items-center justify-center border border-white px-2 py-1.5 transition-all duration-300 hover:bg-white/20">
-                  <span class="text-[10px] font-light tracking-wide text-white uppercase">
+                  <span class="text-[10px] font-light tracking-wide text-white uppercase md:text-base">
                     {tag}
                   </span>
                 </div>
@@ -65,10 +48,10 @@ const defaultColor = "#ff5e5e";
             </div>
             <div class="absolute right-4 bottom-3.5 left-4 flex justify-between">
               {item.data.links.includes("gallery") && (
-                <div class="link-container group flex gap-x-2">
+                <div class="link-container group flex items-center gap-x-2">
                   <a
                     href="/"
-                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
                     style={`--project-color: ${item.data.color || defaultColor}`}
                   >
                     See
@@ -76,17 +59,17 @@ const defaultColor = "#ff5e5e";
                     Gallery
                   </a>
                   <img
-                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1 md:h-14 md:w-14"
                     src={arrowRight.src}
                     alt="Arrow Left"
                   />
                 </div>
               )}
               {item.data.links.includes("aftermovie") && (
-                <div class="link-container group flex gap-x-2">
+                <div class="link-container group flex items-center gap-x-2">
                   <a
                     href="/"
-                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
                     style={`--project-color: ${item.data.color || defaultColor}`}
                   >
                     The
@@ -94,17 +77,17 @@ const defaultColor = "#ff5e5e";
                     Aftermovie
                   </a>
                   <img
-                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1 md:h-14 md:w-14"
                     src={arrowRight.src}
                     alt="Arrow Left"
                   />
                 </div>
               )}
               {item.data.links.includes("dj") && (
-                <div class="link-container group flex gap-x-2">
+                <div class="link-container group flex items-center gap-x-2">
                   <a
                     href="/"
-                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
                     style={`--project-color: ${item.data.color || defaultColor}`}
                   >
                     Full
@@ -112,17 +95,17 @@ const defaultColor = "#ff5e5e";
                     Dj Set
                   </a>
                   <img
-                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1 md:h-14 md:w-14"
                     src={arrowRight.src}
                     alt="Arrow Left"
                   />
                 </div>
               )}
               {item.data.links.includes("commercial") && (
-                <div class="link-container group flex gap-x-2">
+                <div class="link-container group flex items-center gap-x-2">
                   <a
                     href="/"
-                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)]"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
                     style={`--project-color: ${item.data.color || defaultColor}`}
                   >
                     The
@@ -130,7 +113,7 @@ const defaultColor = "#ff5e5e";
                     Commercial
                   </a>
                   <img
-                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1"
+                    class="h-8 w-8 cursor-pointer transition-transform duration-300 group-hover:translate-x-1 md:h-14 md:w-14"
                     src={arrowRight.src}
                     alt="Arrow Left"
                   />
@@ -143,3 +126,14 @@ const defaultColor = "#ff5e5e";
     </div>
   </div>
 </Layout>
+
+<style>
+  .tag-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+  }
+
+  .link-container:hover img {
+    filter: brightness(1.2);
+  }
+</style>
