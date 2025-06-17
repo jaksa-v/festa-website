@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import aboveFooter1 from "../assets/above_footer_1.png";
+import aboveFooter2 from "../assets/above_footer_2.png";
+import aboveFooter3 from "../assets/above_footer_3.png";
+---
+
+<div class="relative hidden h-screen w-full md:block" id="above-footer-slideshow">
+  <div class="slideshow-image active">
+    <Image
+      src={aboveFooter1}
+      alt="Above footer background 1"
+      class="h-full w-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <div class="slideshow-image">
+    <Image
+      src={aboveFooter2}
+      alt="Above footer background 2"
+      class="h-full w-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <div class="slideshow-image">
+    <Image
+      src={aboveFooter3}
+      alt="Above footer background 3"
+      class="h-full w-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <!-- Top gradient -->
+  <div class="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black to-transparent"></div>
+  <!-- Bottom gradient -->
+  <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent"></div>
+</div>
+
+<style>
+  .slideshow-image {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slideshow-image.active {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".slideshow-image");
+    let currentIndex = 0;
+
+    const nextImage = () => {
+      images[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add("active");
+    };
+
+    setInterval(nextImage, 4000);
+  });
+</script>

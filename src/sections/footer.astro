@@ -1,18 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import Socials from "../components/socials.astro";
+import AboveFooterSlideshow from "../components/AboveFooterSlideshow.astro";
 
 import horizontalLogo from "../assets/festa-logo-horizontal.png";
-import aboveFooter from "../assets/above_footer.png";
 ---
 
 <div>
-  <Image
-    src={aboveFooter}
-    alt="Above footer background"
-    class="hidden w-full md:block"
-    loading="lazy"
-  />
+  <AboveFooterSlideshow />
   <div
     class="flex flex-col items-center gap-y-8 bg-black bg-[url('/src/assets/footer_desktop.png')] bg-cover bg-center bg-no-repeat py-10 md:py-16"
   >
