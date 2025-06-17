@@ -4,6 +4,7 @@ import Socials from "../components/socials.astro";
 import AboveFooterSlideshow from "../components/AboveFooterSlideshow.astro";
 
 import horizontalLogo from "../assets/festa-logo-horizontal.png";
+import ContactButtonFooter from "@/components/modal/ContactButtonFooter.vue";
 ---
 
 <div>
@@ -14,11 +15,7 @@ import horizontalLogo from "../assets/festa-logo-horizontal.png";
     <h2 class="text-center text-3xl text-white md:text-5xl md:font-light">
       Like what you see?
     </h2>
-    <button
-      class="bg-festa-500 flex items-center justify-center px-5 py-2 text-lg font-medium text-white transition-transform hover:-translate-y-1 md:px-8 md:py-4 md:text-2xl"
-    >
-      LET'S TALK
-    </button>
+    <ContactButtonFooter client:only="vue" />
     <div
       class="flex flex-col gap-y-4 py-2 text-xl font-light text-white md:flex-row md:justify-center md:gap-x-16 md:gap-y-0 md:text-3xl"
     >
