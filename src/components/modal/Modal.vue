@@ -18,12 +18,16 @@ const handleClose = () => {
     <transition
       enter-active-class="transition duration-300 ease-out"
       enter-from-class="!opacity-0"
-      enter-to-class="!opacity-20"
+      enter-to-class="!opacity-60"
       leave-active-class="transition duration-300 ease-out"
-      leave-from-class="!opacity-20"
+      leave-from-class="!opacity-60"
       leave-to-class="!opacity-0"
     >
-      <div v-if="isOpen" class="fixed inset-0 z-40 bg-black opacity-20" />
+      <div 
+        v-if="isOpen" 
+        @click="handleClose"
+        class="fixed inset-0 z-40 bg-black opacity-60 cursor-pointer" 
+      />
     </transition>
 
     <transition
@@ -39,6 +43,7 @@ const handleClose = () => {
         class="fixed inset-0 z-50 flex items-center justify-center"
       >
         <div
+          @click.stop
           class="relative mx-4 max-h-[90vh] w-full max-w-2xl transform overflow-auto bg-[url('/src/assets/modal-bg-mobile.png')] bg-cover bg-center bg-no-repeat p-3 md:max-w-4xl md:bg-gray-200 md:p-6"
         >
           <button

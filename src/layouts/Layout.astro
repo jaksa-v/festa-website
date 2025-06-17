@@ -22,6 +22,14 @@ import Footer from "../sections/footer.astro";
       <slot />
     </div>
     <ContactButton client:only="vue" />
+    
+    <!-- Hidden form for Netlify detection during build -->
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+    
     <Footer />
   </body>
 </html>

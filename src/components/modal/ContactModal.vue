@@ -79,9 +79,9 @@ const resetForm = () => {
       </div>
       <button
         @click="resetForm"
-        class="bg-festa-500 mt-4 px-6 py-2 md:px-8 md:py-3"
+        class="bg-festa-500 mt-4 px-4 py-1.5 md:px-6 md:py-2"
       >
-        <span class="text-sm font-light text-white md:text-base"
+        <span class="cursor-pointer text-sm font-light text-white md:text-base"
           >SEND ANOTHER MESSAGE</span
         >
       </button>
@@ -99,7 +99,6 @@ const resetForm = () => {
       <form
         @submit="handleSubmit"
         class="flex flex-col gap-y-2 md:gap-y-4"
-        method="POST"
         data-netlify="true"
         name="contact"
       >
@@ -132,7 +131,7 @@ const resetForm = () => {
           class="bg-festa-500 ms-auto mt-2 cursor-pointer px-4 py-1.5 disabled:opacity-50 md:px-5 md:py-2"
           type="submit"
         >
-          <span class="text-xs font-light text-white">
+          <span class="text-xs font-light text-white md:text-base">
             {{ isSubmitting ? "SENDING..." : "SEND MESSAGE" }}
           </span>
         </button>
