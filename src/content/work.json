@@ -16,7 +16,9 @@
     ],
     "image": "rubix-festival-2024.png",
     "links": ["gallery", "aftermovie"],
-    "color": "#ff5e5e"
+    "color": "#ff5e5e",
+    "color_hover": "#ff3333",
+    "component_color": "#66e0b3"
   },
   {
     "id": 2,
@@ -35,7 +37,9 @@
     ],
     "image": "get-lost-montenegro.png",
     "links": ["gallery"],
-    "color": "#4da6ff"
+    "color": "#4da6ff",
+    "color_hover": "#1a8cff",
+    "component_color": "#ffac33"
   },
   {
     "id": 3,
@@ -52,7 +56,9 @@
     ],
     "image": "valentin-huedo.png",
     "links": ["gallery", "dj"],
-    "color": "#ffac33"
+    "color": "#ffac33",
+    "color_hover": "#ff9500",
+    "component_color": "#4da6ff"
   },
   {
     "id": 4,
@@ -71,7 +77,9 @@
     ],
     "image": "mihai-popoviciu.png",
     "links": ["gallery", "aftermovie"],
-    "color": "#66e0b3"
+    "color": "#66e0b3",
+    "color_hover": "#33d699",
+    "component_color": "#ff5e5e"
   },
   {
     "id": 5,
@@ -90,6 +98,8 @@
     ],
     "image": "honda.png",
     "links": ["gallery", "commercial"],
-    "color": "#ff5e5e"
+    "color": "#ff5e5e",
+    "color_hover": "#ff3333",
+    "component_color": "#4da6ff"
   }
 ]

@@ -26,18 +26,19 @@ const defaultColor = "#ff5e5e";
       {
         workWithImages.map((item) => (
           <div
-            class="relative flex h-[360px] w-full flex-col gap-y-3 bg-cover bg-center p-4 md:h-[550px] md:gap-y-8"
+            class="work-card group relative flex h-[360px] w-full flex-col gap-y-3 bg-cover bg-center p-4 md:h-[550px] md:gap-y-8"
             style={
               item.imageUrl
-                ? `background-image: url('${item.imageUrl.src}');`
-                : ""
+                ? `background-image: url('${item.imageUrl.src}'); --component-color: ${item.data.component_color || defaultColor};`
+                : `--component-color: ${item.data.component_color || defaultColor};`
             }
           >
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-all duration-300" style={`background-color: ${item.data.component_color || defaultColor};`}></div>
             <h3
-              class="text-[38px] leading-[34px] font-light text-white md:text-7xl md:leading-[65px]"
+              class="relative text-[38px] leading-[34px] font-light text-white md:text-7xl md:leading-[65px] z-10"
               set:html={item.data.title}
             />
-            <div class="flex max-w-[250px] flex-wrap gap-1 md:max-w-[500px]">
+            <div class="relative flex max-w-[250px] flex-wrap gap-1 md:max-w-[500px] z-10">
               {item.data.tags.map((tag) => (
                 <div class="tag-container flex cursor-pointer items-center justify-center border border-white px-2 py-1.5 transition-all duration-300 hover:bg-white/20">
                   <span class="text-[10px] font-light tracking-wide text-white uppercase md:text-base">
@@ -46,12 +47,12 @@ const defaultColor = "#ff5e5e";
                 </div>
               ))}
             </div>
-            <div class="absolute right-4 bottom-3.5 left-4 flex justify-between">
+            <div class="absolute right-4 bottom-3.5 left-4 flex justify-between z-10">
               {item.data.links.includes("gallery") && (
                 <div class="link-container group flex items-center gap-x-2">
                   <a
                     href="/"
-                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
                     style={`--project-color: ${item.data.color || defaultColor}`}
                   >
                     See
@@ -69,7 +70,7 @@ const defaultColor = "#ff5e5e";
                 <div class="link-container group flex items-center gap-x-2">
                   <a
                     href="/"
-                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
                     style={`--project-color: ${item.data.color || defaultColor}`}
                   >
                     The
@@ -87,7 +88,7 @@ const defaultColor = "#ff5e5e";
                 <div class="link-container group flex items-center gap-x-2">
                   <a
                     href="/"
-                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
                     style={`--project-color: ${item.data.color || defaultColor}`}
                   >
                     Full
@@ -105,7 +106,7 @@ const defaultColor = "#ff5e5e";
                 <div class="link-container group flex items-center gap-x-2">
                   <a
                     href="/"
-                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 group-hover:text-[var(--project-color)] hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
+                    class="font-mono text-lg leading-[18px] text-white uppercase transition-colors duration-300 hover:text-[var(--project-color)] md:text-4xl md:leading-[40px]"
                     style={`--project-color: ${item.data.color || defaultColor}`}
                   >
                     The
@@ -136,4 +137,6 @@ const defaultColor = "#ff5e5e";
   .link-container:hover img {
     filter: brightness(1.2);
   }
+
+
 </style>

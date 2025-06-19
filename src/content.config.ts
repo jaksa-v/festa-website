@@ -11,6 +11,8 @@ const work = defineCollection({
     tags: z.array(z.string()),
     links: z.array(z.string()),
     color: z.string(),
+    color_hover: z.string(),
+    component_color: z.string(),
   }),
 });
 

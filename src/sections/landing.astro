@@ -4,19 +4,47 @@ import { Image } from "astro:assets";
 import horizontalLogo from "../assets/festa-logo-horizontal.png";
 ---
 
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 500ms ease-in-out forwards;
+    opacity: 0;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 500ms ease-in-out forwards;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+</style>
+
 <div
   class="flex min-h-screen items-center justify-center bg-[linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/src/assets/landing.jpeg')] bg-cover bg-center bg-no-repeat md:bg-black"
 >
   <div class="flex flex-col items-center gap-y-8">
     <h2
-      class="text-center text-[38px] leading-[38px] font-light text-white md:text-8xl md:leading-[80px]"
+      class="animate-fade-in text-center text-[38px] leading-[38px] font-light text-white opacity-0 md:text-8xl md:leading-[80px]"
     >
       WE DON&apos;T<br class="md:hidden" /> FOLLOW TRENDS.<br />
       <span class="font-bold">WE CREATE<br class="md:hidden" /> THEM.</span>
     </h2>
 
     <Image
-      class="hidden h-[105px] w-[600px] md:block"
+      class="animate-fade-in animation-delay-500 hidden h-[105px] w-[600px] opacity-0 md:block"
       src={horizontalLogo}
       alt="horizontal logo"
     />
