@@ -8,31 +8,35 @@ const { id } = Astro.props;
   id={id}
   class="flex flex-col items-center justify-center bg-black py-10 md:min-h-screen"
 >
-  <h2
-    class="letter-spacing-[10%] bg-white px-1 font-mono text-3xl md:px-3 md:py-1 md:text-7xl"
-  >
-    ABOUT US
-  </h2>
-  <p
-    class="mt-8 px-8 text-center text-xl font-light text-white md:mt-16 md:text-4xl"
-  >
-    Fešta is a leading creative organization in Montenegro, specializing in
-    music, event production, and cultural projects. Rooted in electronic music,
-    visual arts, and cultural heritage,
-    <span class="font-bold">
-      we transform spaces into unique, story-driven events.
-    </span> Our work spans full-scale event production, artist booking, stage design,
-    creative direction, and marketing, ensuring a seamless blend of creativity and
-    execution.
-  </p>
-  <p class="mt-8 px-8 text-center text-xl font-light text-white md:text-4xl">
-    From international festivals to bespoke brand activations,
-    <span class="font-bold">
-      Fešta creates impactful experiences that engage audiences and redefine
-      cultural landscapes.
-    </span>
-  </p>
-  <div class="mt-12">
-    <Socials />
+  <div class="flex max-w-[1720px] flex-col items-center justify-center">
+    <h2
+      class="letter-spacing-[10%] bg-white px-1 font-mono text-3xl md:px-3 md:py-1 md:text-[90px] md:leading-[100px]"
+    >
+      ABOUT US
+    </h2>
+    <p
+      class="mt-8 px-8 text-center text-xl font-light text-white md:mt-20 md:text-[50px] md:leading-[55px]"
+    >
+      Fešta is a leading creative organization in Montenegro, specializing in
+      music, event production, and cultural projects. Rooted in electronic
+      music, visual arts, and cultural heritage,
+      <span class="font-bold">
+        we transform spaces into unique, story-driven events.
+      </span> Our work spans full-scale event production, artist booking, stage design,
+      creative direction, and marketing, ensuring a seamless blend of creativity
+      and execution.
+    </p>
+    <p
+      class="mt-8 px-8 text-center text-xl font-light text-white md:mt-10 md:text-[50px] md:leading-[55px]"
+    >
+      From international festivals to bespoke brand activations,<br />
+      <span class="font-bold">
+        Fešta creates impactful experiences that engage audiences and redefine
+        cultural landscapes.
+      </span>
+    </p>
+    <div class="mt-12">
+      <Socials />
+    </div>
   </div>
 </div>
