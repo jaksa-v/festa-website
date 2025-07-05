@@ -89,13 +89,13 @@ const resetForm = () => {
 
     <!-- Contact Form -->
     <div v-else class="flex flex-col gap-y-2">
-      <p class="text-xl font-light md:text-5xl md:font-semibold">Contact us:</p>
-      <div class="flex flex-col gap-y-1 md:flex-row md:gap-x-8">
+      <p class="text-xl md:text-[60px] md:leading-[70px]">Contact us:</p>
+      <div class="mt-1 flex flex-col gap-y-1 md:flex-row md:gap-x-8">
         <p class="text-3xl">office@festa.live</p>
         <p class="text-3xl">+382 69 123 321</p>
         <p class="text-3xl">+382 67 987 789</p>
       </div>
-      <p class="text-xl font-light">or send us a message:</p>
+      <p class="mt-2 text-xl font-light md:mt-4">or send us a message:</p>
       <form
         @submit="handleSubmit"
         class="flex flex-col gap-y-2 md:gap-y-4"
@@ -120,7 +120,7 @@ const resetForm = () => {
           />
         </div>
         <textarea
-          rows="5"
+          rows="7"
           name="message"
           placeholder="Message..."
           required

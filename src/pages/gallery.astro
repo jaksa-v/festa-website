@@ -7,7 +7,7 @@ const galleryData = await getCollection("gallery");
 ---
 
 <Layout>
-  <div class="container mx-auto mt-[60px] md:mt-[104px]">
+  <div class="container mx-auto h-full">
     <GalleryComponent galleryData={galleryData} client:only="vue" />
   </div>
 </Layout>

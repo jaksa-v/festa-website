@@ -23,10 +23,10 @@ const handleClose = () => {
       leave-from-class="!opacity-60"
       leave-to-class="!opacity-0"
     >
-      <div 
-        v-if="isOpen" 
+      <div
+        v-if="isOpen"
         @click="handleClose"
-        class="fixed inset-0 z-40 bg-black opacity-60 cursor-pointer" 
+        class="fixed inset-0 z-40 cursor-pointer bg-black opacity-60"
       />
     </transition>
 
@@ -44,15 +44,14 @@ const handleClose = () => {
       >
         <div
           @click.stop
-          class="relative mx-4 max-h-[90vh] w-full max-w-2xl transform overflow-auto bg-[url('/src/assets/modal-bg-mobile.png')] bg-cover bg-center bg-no-repeat p-3 md:max-w-4xl md:bg-gray-200 md:p-6"
+          class="relative mx-4 max-h-[85vh] w-full max-w-2xl transform overflow-auto bg-[url('/src/assets/modal-bg-mobile.png')] bg-cover bg-center bg-no-repeat p-3 md:h-[600px] md:w-[960px] md:max-w-none md:bg-gray-200 md:p-6"
         >
           <button
             @click="handleClose"
             class="absolute top-3 right-3 cursor-pointer md:top-6 md:right-6"
           >
             <svg
-              width="20"
-              height="20"
+              class="h-5 w-5 md:h-8 md:w-8"
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

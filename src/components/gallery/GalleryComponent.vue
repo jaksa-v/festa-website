@@ -8,12 +8,14 @@ import {
 } from "@/components/ui/carousel";
 import { ref, onMounted, computed } from "vue";
 import GallerySelector from "./GallerySelector.vue";
+import ContactButtonFooter from "../modal/ContactButtonFooter.vue";
 
 const props = defineProps<{
   galleryData?: any;
 }>();
 
 const galleryItems = ref<Array<any>>([]);
+const isMobile = ref(false);
 
 const selectedGalleryId = ref<number>(0);
 const currentImageIndex = ref<number>(0);
@@ -71,6 +73,10 @@ const currentImage = computed(() => {
   return galleryImages.value[currentImageIndex.value];
 });
 
+function checkMobile() {
+  isMobile.value = window.innerWidth < 768;
+}
+
 onMounted(() => {
   try {
     if (props.galleryData?.length) {
@@ -81,6 +87,11 @@ onMounted(() => {
         updateGalleryImages();
       }
     }
+
+    // Check initial screen size
+    checkMobile();
+    // Add resize listener
+    window.addEventListener("resize", checkMobile);
   } catch (error) {
     console.error("Error loading gallery data:", error);
     galleryItems.value = [];
@@ -165,11 +176,11 @@ onMounted(() => {
         v-if="selectedGallery"
       >
         <h1
-          class="mb-6 text-4xl leading-tight lg:text-5xl"
+          class="mb-6 text-4xl leading-tight lg:text-[60px] lg:leading-[60px]"
           v-html="selectedGallery.title"
         ></h1>
         <div
-          class="mb-8 flex flex-col gap-y-4 text-lg leading-relaxed lg:text-xl"
+          class="mb-8 flex flex-col gap-y-4 text-lg leading-relaxed font-light lg:text-2xl lg:leading-[28px]"
         >
           <p>{{ selectedGallery.description1 }}</p>
           <p>{{ selectedGallery.description2 }}</p>
@@ -194,6 +205,17 @@ onMounted(() => {
       <div class="my-3 flex flex-col gap-y-2 text-xl leading-5">
         <p>{{ selectedGallery.description1 }}</p>
         <p>{{ selectedGallery.description2 }}</p>
+      </div>
+    </div>
+
+    <div class="mt-4 flex justify-end md:mt-8">
+      <div class="flex items-center gap-x-4">
+        <h2
+          class="text-2xl font-light text-white md:text-[60px] md:leading-[70px]"
+        >
+          Like what you see?
+        </h2>
+        <ContactButtonFooter size="small" />
       </div>
     </div>
   </div>

@@ -3,6 +3,10 @@ import Navbar from "../components/navbar/Navbar.astro";
 import ContactButton from "../components/modal/ContactButton.vue";
 import "../styles/global.css";
 import Footer from "../sections/footer.astro";
+
+// Get current path to conditionally render footer
+const currentPath = Astro.url.pathname;
+const isGalleryPage = currentPath === "/gallery";
 ---
 
 <!doctype html>
@@ -14,7 +18,7 @@ import Footer from "../sections/footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Festa</title>
   </head>
-  <body>
+  <body class="min-h-screen bg-black">
     <Navbar />
     <div
       class="bg-[url('/src/assets/mobile-bg.png')] bg-cover bg-center bg-no-repeat md:bg-black"
@@ -22,15 +26,20 @@ import Footer from "../sections/footer.astro";
       <slot />
     </div>
     <ContactButton client:only="vue" />
-    
+
     <!-- Hidden form for Netlify detection during build -->
-    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+    <form
+      name="contact"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
       <input type="text" name="name" />
       <input type="email" name="email" />
       <textarea name="message"></textarea>
     </form>
-    
-    <Footer />
+
+    {!isGalleryPage && <Footer />}
   </body>
 </html>
 
