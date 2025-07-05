@@ -9,11 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.3.0",
-    "@astrojs/vue": "^5.0.10",
+    "@astrojs/netlify": "^6.4.1",
+    "@astrojs/vue": "^5.1.0",
     "@tailwindcss/vite": "^4.1.4",
     "@vueuse/core": "^13.1.0",
-    "astro": "^5.7.4",
+    "astro": "^5.11.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-vue": "^8.6.0",
