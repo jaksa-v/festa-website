@@ -6,11 +6,30 @@ import OtherNavbar from "./OtherNavbar.astro";
 const currentPath = Astro.url.pathname;
 ---
 
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 2000ms ease-in-out forwards;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+</style>
+
 <nav class="w-full bg-black shadow-md">
   {
     currentPath === "/" ? (
       <>
-        <div class="hidden md:block">
+        <div class="animate-fade-in animation-delay-1000 hidden opacity-0 md:block">
           <NavbarDesktop client:only="vue" />
         </div>
 
