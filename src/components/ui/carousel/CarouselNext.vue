@@ -27,7 +27,7 @@ const { orientation, canScrollNext, scrollNext } = useCarousel();
     :disabled="!canScrollNext"
     :class="
       cn(
-        'absolute size-8 rounded-full',
+        'absolute size-8 cursor-pointer rounded-none border-none bg-black/30 p-9 hover:bg-black/50',
         orientation === 'horizontal'
           ? 'top-1/2 -right-12 -translate-y-1/2'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
@@ -39,7 +39,7 @@ const { orientation, canScrollNext, scrollNext } = useCarousel();
     @click="scrollNext"
   >
     <slot>
-      <ArrowRight />
+      <ArrowRight class="size-9 text-white" />
       <span class="sr-only">Next Slide</span>
     </slot>
   </Button>

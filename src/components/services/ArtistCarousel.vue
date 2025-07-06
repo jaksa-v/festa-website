@@ -18,7 +18,7 @@ const props = defineProps<{
 
 <template>
   <div class="relative w-full">
-    <Carousel class="mx-auto w-full max-w-5xl" :opts="{ loop: true }">
+    <Carousel class="mx-auto w-full max-w-7xl" :opts="{ loop: true }">
       <CarouselContent>
         <CarouselItem
           v-for="(artist, index) in artists"
@@ -29,21 +29,21 @@ const props = defineProps<{
             <img
               :src="artist.image.src"
               :alt="artist.name"
-              class="h-96 w-full object-cover"
+              class="h-[600px] w-full object-cover"
             />
-            <div class="px-2">
+            <div class="mt-6 px-2">
               <h3 class="text-festa-500 font-mono text-3xl leading-5 uppercase">
                 {{ artist.name }}
               </h3>
-              <p class="mt-2 text-xl font-light text-gray-300">
+              <p class="mt-3 text-xl font-light text-gray-300">
                 {{ artist.description }}
               </p>
             </div>
           </div>
         </CarouselItem>
       </CarouselContent>
-      <CarouselPrevious class="-left-12" />
-      <CarouselNext class="-right-12" />
+      <CarouselPrevious class="left-0" />
+      <CarouselNext class="right-0" />
     </Carousel>
   </div>
 </template>
